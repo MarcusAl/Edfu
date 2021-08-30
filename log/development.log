@@ -474,3 +474,30 @@ Processing by StaticPagesController#landing_page as HTML
 Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3910)
 
 
+Started GET "/" for 127.0.0.1 at 2021-08-30 18:23:36 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 2.0ms | Allocations: 277)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 8773)
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8
+Started GET "/" for 127.0.0.1 at 2021-08-30 18:24:23 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 1.1ms | Allocations: 277)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 57.1ms | ActiveRecord: 0.0ms | Allocations: 12844)
+
+
