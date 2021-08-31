@@ -1092,3 +1092,155 @@ Processing by StaticPagesController#landing_page as HTML
 Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3805)
 
 
+Started GET "/" for 127.0.0.1 at 2021-08-31 10:52:26 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 1.8ms | Allocations: 277)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e6e6b85c7440884a0c57
+Version: webpack 4.46.0
+Time: 2739ms
+Built at: 08/31/2021 10:52:31 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-a4c1fee8721e03e7882c.js   1.18 MiB  application  [emitted] [immutable]  application
+js/application-a4c1fee8721e03e7882c.js.map    1.2 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-a4c1fee8721e03e7882c.js js/application-a4c1fee8721e03e7882c.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 861 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 514 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 66 hidden modules
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/Users/MarkAllen/code/MarcusAl/Edfu/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/bootstrap/dist/js/bootstrap.js
+Module not found: Error: Can't resolve 'jquery' in '/Users/MarkAllen/code/MarcusAl/Edfu/node_modules/bootstrap/dist/js'
+ @ ./node_modules/bootstrap/dist/js/bootstrap.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 4911ms (Views: 4905.4ms | ActiveRecord: 0.0ms | Allocations: 8803)
+
+
+Started GET "/privacy_policy" for 127.0.0.1 at 2021-08-31 10:52:41 +0100
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 1.2ms | Allocations: 139)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 4060)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-31 10:52:44 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3814)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-31 10:53:36 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 2.9ms | Allocations: 277)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/MarkAllen/code/MarcusAl/Edfu/public/packs
+[Webpacker] Hash: 5168d0742ca6df40fa77
+Version: webpack 4.46.0
+Time: 2555ms
+Built at: 08/31/2021 10:53:41 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-0b09be92f97523f13686.js   1.18 MiB  application  [emitted] [immutable]  application
+js/application-0b09be92f97523f13686.js.map    1.2 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-0b09be92f97523f13686.js js/application-0b09be92f97523f13686.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 861 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 514 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 66 hidden modules
+
+Completed 200 OK in 4599ms (Views: 4592.3ms | ActiveRecord: 0.0ms | Allocations: 8893)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-31 11:35:17 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 1.3ms | Allocations: 278)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/MarkAllen/code/MarcusAl/Edfu/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 3b05e212a988eccf5ad6
+Version: webpack 4.46.0
+Time: 2863ms
+Built at: 08/31/2021 11:35:23 AM
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-39456f53188b65244365.js  1.39 MiB  application  [emitted] [immutable]  application
+  js/application-39456f53188b65244365.js.map  1.42 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+  media/webfonts/fa-brands-400-1a575a41.woff  87.9 KiB               [emitted]              
+   media/webfonts/fa-brands-400-1d5619cd.svg   730 KiB               [emitted]              
+   media/webfonts/fa-brands-400-513aa607.ttf   131 KiB               [emitted]              
+   media/webfonts/fa-brands-400-592643a8.eot   131 KiB               [emitted]              
+ media/webfonts/fa-brands-400-ed311c7a.woff2  74.9 KiB               [emitted]              
+  media/webfonts/fa-regular-400-766913e6.ttf  32.9 KiB               [emitted]              
+  media/webfonts/fa-regular-400-b0e2db3b.eot  33.2 KiB               [emitted]              
+media/webfonts/fa-regular-400-b91d376b.woff2  12.9 KiB               [emitted]              
+  media/webfonts/fa-regular-400-c5d109be.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-d1d7e3b4.woff  15.9 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0c6bfc66.eot   198 KiB               [emitted]              
+    media/webfonts/fa-solid-900-37bc7099.svg   897 KiB               [emitted]              
+    media/webfonts/fa-solid-900-b9625119.ttf   198 KiB               [emitted]              
+   media/webfonts/fa-solid-900-d745348d.woff  99.3 KiB               [emitted]              
+  media/webfonts/fa-solid-900-d824df7e.woff2  76.4 KiB               [emitted]              
+Entrypoint application = js/application-39456f53188b65244365.js js/application-39456f53188b65244365.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 909 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 514 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 84 hidden modules
+
+Completed 200 OK in 5678ms (Views: 5672.5ms | ActiveRecord: 0.0ms | Allocations: 8946)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-31 11:45:09 +0100
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 4.0ms | Allocations: 3345)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 13052)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-31 12:06:35 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (Duration: 4.7ms | Allocations: 3086)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 91.7ms | ActiveRecord: 0.0ms | Allocations: 17838)
+
+
