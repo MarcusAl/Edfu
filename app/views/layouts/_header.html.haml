@@ -1,5 +1,5 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  .container.p-2
+  .container.p-2.d-inline-flex
     %a.navbar-brand{:href => "/"}
       %i.fas.fa-flag
       Edfu
@@ -7,13 +7,13 @@
       %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       %i.fas.fa-grip-lines-vertical.d-none.d-md-block
-      #navbarSupportedContent.collapse.navbar-collapse
-        %ul.navbar-nav.me-auto
-          = link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do
+      %div#navbarSupportedContent.collapse.navbar-collapse
+        %ul.navbar-nav.me-auto.my-md-0.my-1
+          = link_to root_path, class: "nav-link #{'active' if current_page?(root_path)}" do
             .fa.fa-home
             Home
-          %ul.navbar-nav.me-auto
-            = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do
+          %ul.navbar-nav.me-auto.my-md-0.my-1
+            = link_to courses_path, class: "nav-link #{'active' if current_page?(root_path)}" do
               .fas.fa-book-open
               Courses
         %ul.navbar-nav.ms-auto.me-5.d-flex
@@ -32,6 +32,7 @@
                 = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
                   .fa.fa-sign-out-alt
                   %b Sign out
-          - else
-            = link_to "Log in", new_user_session_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_session_path)}"
-            = link_to "Sign up", new_user_registration_path, class: "nav-link #{'active fw-bold' if current_page?(new_user_registration_path)}"
+    - else
+      %ul.navbar-nav.ms-auto.me-5
+        = link_to "Log in", new_user_session_path, class: "nav-link #{'active fw-bold text-black' if current_page?(new_user_session_path)}"
+        = link_to "Sign up", new_user_registration_path, class: "nav-link #{'active fw-bold text-black' if current_page?(new_user_registration_path)}"
