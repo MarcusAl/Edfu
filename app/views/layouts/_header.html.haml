@@ -9,18 +9,20 @@
       %i.fas.fa-grip-lines-vertical.d-none.d-md-block
       %div#navbarSupportedContent.collapse.navbar-collapse
         %ul.navbar-nav.me-auto.my-md-0.my-1
-          = link_to root_path, class: "nav-link #{'active' if current_page?(root_path)}" do
+          = link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do
             .fa.fa-home
             Home
           %ul.navbar-nav.me-auto.my-md-0.my-1
-            = link_to courses_path, class: "nav-link #{'active' if current_page?(root_path)}" do
+            = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
               .fas.fa-book-open
               Courses
         %ul.navbar-nav.ms-auto.me-5.d-flex
           - if current_user
             %form.d-flex
-              %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-              %button.btn.btn-outline-success{:type => "submit"} Search
+              .input-group
+                %input.form-control{"aria-describedby" => "basic-addon1", "aria-label" => "Username", :placeholder => "Search for courses...", :type => "text"}/
+                %button.btn.btn-outline-success{:type => "submit"}
+                  %i.fas.fa-search
             %li.nav-item.dropdown.mx-md-3
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
                 .fa.fa-user
