@@ -1,14 +1,70 @@
 
+.container
+  .h-100.p-5.text-dark.bg-light.rounded-3
+    %h1.display-2 What do you want to learn today?
+    .form-inline.d-flex.w-100.w-md-25
+      = form_tag(courses_path, method: :get) do
+        .input-group
+          = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
+          %button.btn.btn-outline-dark.btn-lg{:type => "submit"}
+            %i.fas.fa-search{"aria-hidden" => "true"}
 
-%h1 
-  Hello#world
-  %p Find me in app/views/home/index.html.haml
+.card-group.container
+  .card.card-body
+    %h1
+      .fa.fa-graduation-cap
+    = Course.count
+    online courses
+    .row
+    Explore a variety of fresh topics
+  .card.card-body
+    %h1
+      .fa.fa-chalkboard-teacher
+      /.fa.fa-brain
+    = Course.distinct.count(:user_id)
+    expert instructors
+    .row
+    Find the right instructor for you
+  .card.card-body
+    %h1
+      .fa.fa-user-graduate
+    = User.count
+    active learners
+    .row
+    Join the knowledge sharing community
+  .card.card-body
+    %h1
+      .fa.fa-infinity
+    Lifetime access
+    .row
+    Learn on your schedule
 
-.fa.fa-flag
-.fab.fa-amazon
-= link_to root_path do
-  .fa.fa-home
+.container
+  %hr.my-4
+    %h2
+      Popular courses
+    .container
+    .row
+      - @courses.each do |course|
+        .col-12.my-3.col-md-4
+          = render 'courses/course', course: course
 
-= link_to courses_path, class: 'btn btn-success' do
-  .fa.fa-book
-  Course
+  %hr.my-4
+    %h2 
+      Top rated courses
+    .container
+    .row
+      - @courses.each do |course|
+        .col-12.my-3.col-md-4
+          = render 'courses/course', course: course
+
+  %hr.my-4
+    %h2 
+      Latest courses
+    .container
+    .row
+      - @latest_courses.each do |course|
+        .col-12.my-3.col-md-4
+          = render 'courses/course', course: course
+
+  %hr

@@ -1,5 +1,5 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  .container.p-2.d-inline-flex
+  .container.p-1.d-inline-flex
     %a.navbar-brand{:href => "/"}
       %i.fas.fa-flag
       Edfu
@@ -7,8 +7,8 @@
       %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       %i.fas.fa-grip-lines-vertical.d-none.d-md-block
-      %div#navbarSupportedContent.collapse.navbar-collapse
-        %ul.navbar-nav.me-auto.my-md-0.my-1
+      #navbarSupportedContent.collapse.navbar-collapse
+        %ul.navbar-nav.me-auto.my-md-0.my-1.mx-md-2
           = link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do
             .fa.fa-home
             Home
@@ -16,13 +16,18 @@
             = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
               .fas.fa-book-open
               Courses
+          %ul.navbar-nav.me-auto.my-md-0.my-1
+            = link_to new_course_path, class: "nav-link #{'active fw-bold' if current_page?(new_course_path)}" do
+              .fas.fa-plus
+              New Course
         %ul.navbar-nav.ms-auto.me-5.d-flex
           - if current_user
-            %form.d-flex
-              .input-group
-                %input.form-control{"aria-describedby" => "basic-addon1", "aria-label" => "Username", :placeholder => "Search for courses...", :type => "text"}/
-                %button.btn.btn-outline-success{:type => "submit"}
-                  %i.fas.fa-search
+            .form-inline.d-flex
+              = form_tag(courses_path, method: :get) do
+                .input-group
+                  = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
+                  %button.btn.btn-outline-success.btn-sm{:type => "submit"}
+                    %i.fas.fa-search{"aria-hidden" => "true"}
             %li.nav-item.dropdown.mx-md-3
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
                 .fa.fa-user
@@ -35,6 +40,6 @@
                   .fa.fa-sign-out-alt
                   %b Sign out
     - else
-      %ul.navbar-nav.ms-auto.me-5
-        = link_to "Log in", new_user_session_path, class: "nav-link #{'active fw-bold text-black' if current_page?(new_user_session_path)}"
-        = link_to "Sign up", new_user_registration_path, class: "nav-link #{'active fw-bold text-black' if current_page?(new_user_registration_path)}"
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
