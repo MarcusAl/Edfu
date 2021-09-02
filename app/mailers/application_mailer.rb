@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Edfu <support@edfu.herokuapp.com>'
+  default from: 'Edfu <marcusgrantee@gmail.com>'
   layout 'mailer'
 end
