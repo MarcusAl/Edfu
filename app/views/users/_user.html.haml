@@ -1,0 +1,36 @@
+.card.p-0.h-100
+  .card-header
+    .card-title
+      .fa.fa-user
+      = user.email
+  .list-group.list-group-flush
+    .card-header
+      Signed Up
+      = time_ago_in_words(user.created_at)
+      ago
+    .list-group-item
+      = 'sign_in_count'.humanize
+      %span :
+      = user.sign_in_count
+    .list-group-item
+      = 'current_sign_in_at'.humanize
+      %span :
+      = user.current_sign_in_at
+    .list-group-item
+      = 'last_sign_in_at'.humanize
+      %span :
+      = user.last_sign_in_at
+    .list-group-item
+      = 'current_sign_in_ip'.humanize
+      %span :
+      = user.current_sign_in_ip
+    .list-group-item
+      = 'last_sign_in_ip'.humanize
+      %span :
+      = user.last_sign_in_ip
+    .card-footer
+      Confirmed email?
+      - if (user.confirmed_at.present?)
+        .badge.bg-success Yes
+      - else
+        .badge.bg-warning No
