@@ -13,5 +13,6 @@
     .fa.fa-chalkboard-teacher
     = course.user
   .card-footer
-    = link_to 'Show', course, class: 'btn btn-sm btn-success'
-    = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-secondary'
+    - unless current_page?(course)
+      = link_to 'Show', course, class: 'btn btn-sm btn-outline-secondary'
+    = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-outline-secondary'

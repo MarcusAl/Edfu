@@ -26,7 +26,7 @@
               = form_tag(courses_path, method: :get) do
                 .input-group
                   = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
-                  %button.btn.btn-outline-success.btn-sm{:type => "submit"}
+                  %button.btn.btn-success.btn-sm{:type => "submit"}
                     %i.fas.fa-search{"aria-hidden" => "true"}
             %li.nav-item.dropdown.mx-md-3
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
