@@ -1,7 +1,7 @@
-.card.p-0.h-100
+.card.p-0.h-100.text-center
   .card-header.justify-content-evenly.d-inline-flex
     .card-title
-      .fa.fa-book
+      .fa.fa-graduation-cap
       = link_to course.title, course_path(course), class: 'card-link text-decoration-none text-black fw-bold'
       = link_to '', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-times text-muted ms-3 text-decoration-none'
   .card-body
@@ -13,6 +13,13 @@
     .fa.fa-chalkboard-teacher
     = course.user
   .card-footer
+    .badge.bg-secondary
+      = course.language
+    .badge.bg-secondary.ms-3
+      = course.level
+    .badge.bg-secondary.ms-3
+      = number_to_currency(course.price)
+  .card-footer
     - unless current_page?(course)
-      = link_to 'Show', course, class: 'btn btn-sm btn-outline-secondary'
+      = link_to 'View', course, class: 'btn btn-sm btn-outline-secondary'
     = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-outline-secondary'

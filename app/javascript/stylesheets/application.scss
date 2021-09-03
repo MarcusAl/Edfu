@@ -2,3 +2,8 @@
 * {
   text-decoration: none !important;
 }
+
+.form-control.is-invalid,
+.form-control.is-valid {
+  background-image: none;
+}

@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  # DELETE /courses/1 or /courses/1.json
+  # Delete a course
   def destroy
     @course.destroy
     respond_to do |format|
@@ -68,6 +68,6 @@ class CoursesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def course_params
-    params.require(:course).permit(:title, :description)
+    params.require(:course).permit(:title, :description, :short_description, :price, :language, :level)
   end
 end
