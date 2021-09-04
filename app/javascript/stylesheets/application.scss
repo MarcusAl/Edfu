@@ -7,3 +7,18 @@
 .form-control.is-valid {
   background-image: none;
 }
+
+#dark_mode_btn {
+  font-size: 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #bbb;
+}
+
+#dark_mode_btn:hover {
+  cursor: pointer;
+}
