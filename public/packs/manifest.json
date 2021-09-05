@@ -1,15 +1,15 @@
 {
-  "application.js": "/packs/js/application-cb656f5cf671338b9ae8.js",
-  "application.js.map": "/packs/js/application-cb656f5cf671338b9ae8.js.map",
+  "application.js": "/packs/js/application-6ae4731f5070d7815aa7.js",
+  "application.js.map": "/packs/js/application-6ae4731f5070d7815aa7.js.map",
   "darkReaderHelper.js": "/packs/js/darkReaderHelper-82cde40a3c4c43852051.js",
   "darkReaderHelper.js.map": "/packs/js/darkReaderHelper-82cde40a3c4c43852051.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-cb656f5cf671338b9ae8.js"
+        "/packs/js/application-6ae4731f5070d7815aa7.js"
       ],
       "js.map": [
-        "/packs/js/application-cb656f5cf671338b9ae8.js.map"
+        "/packs/js/application-6ae4731f5070d7815aa7.js.map"
       ]
     },
     "darkReaderHelper": {
@@ -29,6 +29,7 @@
       ]
     }
   },
+  "media/images/thought.jpg": "/packs/media/images/thought-259c99a3.jpg",
   "media/webfonts/fa-brands-400.eot": "/packs/media/webfonts/fa-brands-400-592643a8.eot",
   "media/webfonts/fa-brands-400.svg": "/packs/media/webfonts/fa-brands-400-1d5619cd.svg",
   "media/webfonts/fa-brands-400.ttf": "/packs/media/webfonts/fa-brands-400-513aa607.ttf",

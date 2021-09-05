@@ -1,0 +1,26 @@
+.hero_cont {
+  background: url('~images/thought.jpg');
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-size: cover;
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to bottom right,
+      #645dd7,
+      #fe4a49
+    );
+    opacity: 0.3;
+  }
+}

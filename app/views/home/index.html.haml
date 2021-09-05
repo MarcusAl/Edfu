@@ -1,15 +1,17 @@
 
-.container
-  .h-100.p-5.text-dark.bg-light.rounded-3
-    %h1.display-2 What do you want to learn today?
-    .form-inline.d-flex.w-100.w-md-25
-      = form_tag(courses_path, method: :get) do
-        .input-group
-          = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
-          %button.btn.btn-outline-dark.btn-lg{:type => "submit"}
-            %i.fas.fa-search{"aria-hidden" => "true"}
+.container-fluid
+  .p-5.text-dark.bg-light.rounded-3.hero_cont.w-100
+    .row.justify-content-center.align-content-center.w-md-75
+      .col-11.visible
+        %h1.display-5.fw-bold.text-white.mt-5.w-100.w-md-75 Education just got cool.
+        .form-inline.w-100
+          = form_tag(courses_path, method: :get) do
+            .input-group
+              %button.btn.btn-outline-light.btn-lg{:type => "submit"}
+                %i.fas.fa-search{"aria-hidden" => "true"}
+              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
 
-.card-group.container
+.card-group.container.mt-3
   .card.card-body
     %h1
       .fa.fa-graduation-cap
