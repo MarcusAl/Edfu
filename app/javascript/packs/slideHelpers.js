@@ -1,6 +1,6 @@
 export const slideHelpers = () => {
   document.addEventListener('turbolinks:load', () => {
-    let slider = tns({
+    const slider = tns({
       container: '.slider_cont',
       items: 2,
       gutter: 10,
@@ -12,6 +12,7 @@ export const slideHelpers = () => {
       swipeAngle: false,
       speed: 400,
       edgePadding: 20,
+      preventScrollOnTouch: 'force',
       responsive: {
         350: {
           items: 1,
@@ -21,7 +22,7 @@ export const slideHelpers = () => {
         },
       },
     });
-    let slider2 = tns({
+    const slider2 = tns({
       container: '.slider_cont_2',
       items: 2,
       gutter: 10,
@@ -33,6 +34,7 @@ export const slideHelpers = () => {
       swipeAngle: false,
       speed: 400,
       edgePadding: 20,
+      preventScrollOnTouch: 'force',
       responsive: {
         350: {
           items: 1,
@@ -42,7 +44,7 @@ export const slideHelpers = () => {
         },
       },
     });
-    let slider3 = tns({
+    const slider3 = tns({
       container: '.slider_cont_3',
       items: 2,
       gutter: 10,
@@ -54,6 +56,7 @@ export const slideHelpers = () => {
       swipeAngle: false,
       speed: 400,
       edgePadding: 20,
+      preventScrollOnTouch: 'force',
       responsive: {
         350: {
           items: 1,
