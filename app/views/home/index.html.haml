@@ -43,28 +43,27 @@
   %hr.my-4
     %h2
       Popular courses
-    .container
-    .row
+    .slider_cont
       - @courses.each do |course|
-        .col-12.my-3.col-md-4
+        .col-12.my-3.col-md-4.slider_item
           = render 'courses/course', course: course
 
+.container
   %hr.my-4
-    %h2 
+    %h2
       Top rated courses
-    .container
-    .row
+    .slider_cont_2
       - @courses.each do |course|
-        .col-12.my-3.col-md-4
+        .col-12.my-3.col-md-4.slider_item
           = render 'courses/course', course: course
 
+.container
   %hr.my-4
-    %h2 
+    %h2
       Latest courses
-    .container
-    .row
+    .slider_cont_3
       - @latest_courses.each do |course|
-        .col-12.my-3.col-md-4
+        .col-12.my-3.col-md-4.slider_item
           = render 'courses/course', course: course
 
   %hr

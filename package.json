@@ -11,6 +11,8 @@
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^5.1.0",
     "darkreader": "^4.9.34",
+    "jquery": "^3.6.0",
+    "tiny-slider": "^2.9.3",
     "trix": "^1.2.0",
     "turbolinks": "^5.2.0"
   },

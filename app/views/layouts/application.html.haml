@@ -8,9 +8,12 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   %body
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"}
+    / NOTE: prior to v2.2.1 tiny-slider.js need to be in <body>
     = render 'layouts/header'
     = render 'layouts/messages'
     .container
@@ -18,3 +21,4 @@
       = yield
       %br
     = render 'layouts/darkmodebtn'
+

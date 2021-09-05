@@ -1,13 +1,31 @@
 {
-  "application.js": "/packs/js/application-7861aada05734a9c5b43.js",
-  "application.js.map": "/packs/js/application-7861aada05734a9c5b43.js.map",
+  "application.js": "/packs/js/application-bc51df906e30eb66fa89.js",
+  "application.js.map": "/packs/js/application-bc51df906e30eb66fa89.js.map",
+  "darkReaderHelper.js": "/packs/js/darkReaderHelper-82cde40a3c4c43852051.js",
+  "darkReaderHelper.js.map": "/packs/js/darkReaderHelper-82cde40a3c4c43852051.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-7861aada05734a9c5b43.js"
+        "/packs/js/application-bc51df906e30eb66fa89.js"
       ],
       "js.map": [
-        "/packs/js/application-7861aada05734a9c5b43.js.map"
+        "/packs/js/application-bc51df906e30eb66fa89.js.map"
+      ]
+    },
+    "darkReaderHelper": {
+      "js": [
+        "/packs/js/darkReaderHelper-82cde40a3c4c43852051.js"
+      ],
+      "js.map": [
+        "/packs/js/darkReaderHelper-82cde40a3c4c43852051.js.map"
+      ]
+    },
+    "slideHelpers": {
+      "js": [
+        "/packs/js/slideHelpers-6a2307631a26b15009e3.js"
+      ],
+      "js.map": [
+        "/packs/js/slideHelpers-6a2307631a26b15009e3.js.map"
       ]
     }
   },
@@ -25,5 +43,7 @@
   "media/webfonts/fa-solid-900.svg": "/packs/media/webfonts/fa-solid-900-37bc7099.svg",
   "media/webfonts/fa-solid-900.ttf": "/packs/media/webfonts/fa-solid-900-b9625119.ttf",
   "media/webfonts/fa-solid-900.woff": "/packs/media/webfonts/fa-solid-900-d745348d.woff",
-  "media/webfonts/fa-solid-900.woff2": "/packs/media/webfonts/fa-solid-900-d824df7e.woff2"
+  "media/webfonts/fa-solid-900.woff2": "/packs/media/webfonts/fa-solid-900-d824df7e.woff2",
+  "slideHelpers.js": "/packs/js/slideHelpers-6a2307631a26b15009e3.js",
+  "slideHelpers.js.map": "/packs/js/slideHelpers-6a2307631a26b15009e3.js.map"
 }
