@@ -2,4 +2,4 @@
 *.scss linguist-detectable=true
 *.ruby linguist-detectable=true
 *.haml linguist-detectable=true
-*.js linguist-detectable=true
+*.js linguist-detectable=false
