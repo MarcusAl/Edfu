@@ -1,71 +1,159 @@
 
-.container-fluid
+.container-fluid-md
   .p-5.text-dark.bg-light.rounded-3.hero_cont.w-100
-    .row.justify-content-center.align-content-center.w-md-75
+    .row.justify-content-center.align-content-center.w-md-75.bottom-pos
       .col-11.visible
-        %h1.display-5.fw-bold.text-white.mt-5.w-100.w-md-75 Learn music in your own time
+        %h1.fw-bold.text-white.mt-5.banner_title Learn in your own time
         .form-inline.w-100
           = form_tag(courses_path, method: :get) do
             .input-group
-              %button.btn.btn-outline-light.btn-lg{:type => "submit"}
+              %button.btn.btn-lg.btn-cta.visible{:type => "submit"}
                 %i.fas.fa-search{"aria-hidden" => "true"}
-              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
+              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control border border-light'
 
-.card-group.container.mt-3
-  .card.card-body
+.card-group.container-fluid-md.mt-3.row.mx-auto
+  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.hover-card-blue.visible
     %h1
-      .fa.fa-graduation-cap
-    = Course.count
-    online courses
+      .fa.fa-graduation-cap.display-5
+    .fw-bold
+      = Course.count
+      online courses
     .row
     Explore a variety of fresh topics
-  .card.card-body
+  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-salmon.visible
     %h1
-      .fa.fa-chalkboard-teacher
+      .fa.fa-chalkboard-teacher.display-5
       /.fa.fa-brain
-    = Course.distinct.count(:user_id)
-    expert instructors
+    .fw-bold
+      = Course.distinct.count(:user_id)
+      expert music instructors
     .row
     Find the right instructor for you
-  .card.card-body
+  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-aqua.visible
     %h1
-      .fa.fa-user-graduate
-    = User.count
-    active learners
+      .fa.fa-user-graduate.display-5
+    .fw-bold
+      = User.count
+      active learners
     .row
-    Join the knowledge sharing community
-  .card.card-body
+    Join the community
+  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-pink.visible
     %h1
-      .fa.fa-infinity
-    Lifetime access
+      .fa.fa-infinity.display-5
+    .fw-bold
+      Lifetime access
     .row
     Learn on your schedule
 
-.container
-  %hr.my-4
-    %h2
-      Popular courses
-    .slider_cont
-      - @courses.each do |course|
-        .col-12.my-3.col-md-4.slider_item
-          = render 'courses/course', course: course
+.container.mt-3.mb-5
+%hr.my-4.visible
+%h2.visible
+  Popular courses
+#accordionFlushExample.accordion
+  .accordion-item.visible
+    %h2#flush-headingOne.accordion-header.visible
+      %button.accordion-button.collapsed.bg-light.text-black.visible{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
+        View
+    #collapseOne.accordion-collapse.collapse{"aria-labelledby" => "flush-headingOne", "data-bs-parent" => "#accordionFlush"}
+      .accordion-body
+        .slider_cont
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[0]
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[1]
+              .col-12
+                = render 'courses/course', course: @courses[2]
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[3]
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[4]
+              .col-12
+                = render 'courses/course', course: @courses[5]
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[6]
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[7]
+              .col-12
+                = render 'courses/course', course: @courses[8]
 
-.container
-  %hr.my-4
-    %h2
-      Top rated courses
-    .slider_cont_2
-      - @courses.each do |course|
-        .col-12.my-3.col-md-4.slider_item
-          = render 'courses/course', course: course
 
-.container
-  %hr.my-4
-    %h2
-      Latest courses
-    .slider_cont_3
-      - @latest_courses.each do |course|
-        .col-12.my-3.col-md-4.slider_item
-          = render 'courses/course', course: course
+.container.mb-5
+%hr.my-4
+%h2
+  Top rated courses
+#accordionTwo.accordion
+  .accordion-item
+    %h2#flush-headingTwo.accordion-header
+      %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
+        View
+    #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionFlush"}
+      .accordion-body
+        .slider_cont_2
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[0]
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[1]
+              .col-12
+                = render 'courses/course', course: @courses[2]
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[3]
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[4]
+              .col-12
+                = render 'courses/course', course: @courses[5]
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[6]
+              .col-12.mb-3
+                = render 'courses/course', course: @courses[7]
+              .col-12
+                = render 'courses/course', course: @courses[8]
 
-  %hr
+  .container
+  %hr.my-4
+  %h2
+    Latest courses
+  #accordionThree.accordion
+    .accordion-item
+      %h2#flush-headingThree.accordion-header
+        %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}
+          View
+      #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionFlush"}
+        .accordion-body
+          .slider_cont_3
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @latest_courses[0]
+                .col-12.mb-3
+                  = render 'courses/course', course: @latest_courses[1]
+                .col-12
+                  = render 'courses/course', course: @latest_courses[2]
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @latest_courses[3]
+                .col-12.mb-3
+                  = render 'courses/course', course: @latest_courses[4]
+                .col-12
+                  = render 'courses/course', course: @latest_courses[5]
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @latest_courses[6]
+                .col-12.mb-3
+                  = render 'courses/course', course: @latest_courses[7]
+                .col-12
+                  = render 'courses/course', course: @latest_courses[8]
+    %hr

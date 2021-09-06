@@ -1,5 +1,9 @@
 @import 'container';
+@import 'button';
+@import 'utils';
+@import 'card';
 
-.visible {
-  z-index: 1000 !important;
+body {
+  position: relative;
+  overflow-x: hidden;
 }

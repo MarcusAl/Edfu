@@ -1,14 +1,16 @@
 .hero_cont {
   background: url('~images/thought.jpg');
   position: relative;
+  overflow: hidden;
   background-position: center center;
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;
   width: 80vw;
-  height: 70vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
+  // z-index: -2;
   &:before {
     content: '';
     position: absolute;
@@ -22,6 +24,52 @@
       #fe4a49
     );
     // 7ABCC8
-    opacity: 0.3;
+    opacity: 0.5;
+  }
+}
+
+.banner_title {
+  font-size: 55px;
+  letter-spacing: 1px !important;
+  font-family: 'Castoro', serif !important;
+}
+
+.hero_cont:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(254, 193, 11, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skew(-70deg);
+  z-index: 1;
+}
+
+@media screen and (max-height: 740px) {
+  .hero_cont {
+    height: 45vh;
+    &:before {
+      opacity: 0.5;
+    }
+  }
+  .banner_title {
+    font-size: 20px;
+  }
+  // .bottom-pos {
+  //   // position: absolute;
+  //   // bottom: 20px;
+  // }
+  .hero_cont:after {
+    width: 80%;
+    height: 120%;
+    top: -100px;
+    border-radius: 0;
+    transform: skew(-60deg);
   }
 }

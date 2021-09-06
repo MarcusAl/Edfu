@@ -1,4 +1,4 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.visible
   .container.p-1.d-inline-flex
     %a.navbar-brand{:href => "/"}
       %i.fas.fa-flag
@@ -30,7 +30,7 @@
               = form_tag(courses_path, method: :get) do
                 .input-group
                   = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for courses..", class: 'form-control'
-                  %button.btn.btn-success.btn-sm{:type => "submit"}
+                  %button.btn.btn-outline-dark.btn-sm{:type => "submit"}
                     %i.fas.fa-search{"aria-hidden" => "true"}
             %li.nav-item.dropdown.mx-md-3
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
