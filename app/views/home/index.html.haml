@@ -2,7 +2,7 @@
 .container-fluid-md
   .p-5.text-dark.bg-light.rounded-3.hero_cont.w-100
     .row.justify-content-center.align-content-center.w-md-75.bottom-pos
-      .col-11.visible
+      .col-12.col-md-11.visible
         %h1.fw-bold.text-white.mt-5.banner_title Learn in your own time
         .form-inline.w-100
           = form_tag(courses_path, method: :get) do
@@ -12,7 +12,7 @@
               = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for anything", class: 'form-control border border-light'
 
 .card-group.container-fluid-md.mt-3.row.mx-auto
-  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.hover-card-blue.visible
+  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.hover-card-blue.visible.d-none.d-md-block
     %h1
       .fa.fa-graduation-cap.display-5
     .fw-bold
@@ -20,7 +20,7 @@
       online courses
     .row
     Explore a variety of fresh topics
-  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-salmon.visible
+  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-salmon.visible.d-none.d-md-block
     %h1
       .fa.fa-chalkboard-teacher.display-5
       /.fa.fa-brain
@@ -46,10 +46,10 @@
     Learn on your schedule
 
 .container.mt-3.mb-5
-%hr.my-4.visible
-%h2.visible
+%hr.my-4
+%h2.banner_title_small
   Popular courses
-#accordionFlushExample.accordion
+#accordionFlushExample.accordion.accordion-flush
   .accordion-item.visible
     %h2#flush-headingOne.accordion-header.visible
       %button.accordion-button.collapsed.bg-light.text-black.visible{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
@@ -85,9 +85,9 @@
 
 .container.mb-5
 %hr.my-4
-%h2
+%h2.banner_title_small
   Top rated courses
-#accordionTwo.accordion
+#accordionTwo.accordion.accordion-flush
   .accordion-item
     %h2#flush-headingTwo.accordion-header
       %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
@@ -122,9 +122,9 @@
 
   .container
   %hr.my-4
-  %h2
+  %h2.banner_title_small
     Latest courses
-  #accordionThree.accordion
+  #accordionThree.accordion.accordion-flush
     .accordion-item
       %h2#flush-headingThree.accordion-header
         %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}

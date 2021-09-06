@@ -28,7 +28,8 @@
   }
 }
 
-.banner_title {
+.banner_title,
+.banner_title_small {
   font-size: 55px;
   letter-spacing: 0.5px !important;
   font-family: 'Castoro', serif !important;
@@ -59,7 +60,11 @@
     }
   }
   .banner_title {
-    font-size: 29px;
+    font-size: 40px;
+  }
+  .banner_title_small {
+    font-size: 25px;
+    font-weight: bold;
   }
   // .bottom-pos {
   //   // position: absolute;
