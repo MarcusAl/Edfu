@@ -9,18 +9,26 @@
   background: rgba(254, 193, 11, 0.7) !important;
 }
 
-.hover-card-blue:hover {
+.hover-card-blue {
   background: rgba(176, 173, 255, 0.6) !important;
 }
 
-.hover-card-salmon:hover {
+.hover-card-blue:hover,
+.hover-card-blue:active {
+  background: rgba(176, 173, 255, 0.6) !important;
+}
+
+.hover-card-salmon:hover,
+.hover-card-salmon:active {
   background: rgba(255, 218, 194, 0.9) !important;
 }
 
-.hover-card-aqua:hover {
+.hover-card-aqua:hover,
+.hover-card-aqua:active {
   background: rgba(181, 244, 247, 0.9) !important;
 }
 
-.hover-card-pink:hover {
+.hover-card-pink:hover,
+.hover-card-pink:active {
   background: rgba(236, 192, 207, 0.9) !important;
 }
