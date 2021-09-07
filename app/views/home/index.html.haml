@@ -14,7 +14,7 @@
             %i.fas.fa-search{"aria-hidden" => "true"}
           = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for anything", class: 'form-control border border-light'
 .card-group.container-fluid-md.mt-3.row.mx-auto
-  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.hover-card-blue.visible.d-none.d-md-block
+  = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-blue visible d-md-block" do
     %h1
       .fa.fa-graduation-cap.display-5
     .fw-bold
@@ -22,7 +22,7 @@
       online courses
     .row
     Explore a variety of fresh topics
-  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-salmon.visible.d-none.d-md-block
+  = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-salmon visible d-none d-md-block mt-5 mt-md-0 ms-md-3" do
     %h1
       .fa.fa-chalkboard-teacher.display-5
       /.fa.fa-brain
@@ -31,7 +31,7 @@
       expert music instructors
     .row
     Find the right instructor for you
-  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-aqua.visible.mt-5.mt-md-0
+  = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-aqua visible d-none d-md-block mt-5 mt-md-0 ms-md-3" do
     %h1
       .fa.fa-user-graduate.display-5
     .fw-bold
@@ -39,7 +39,7 @@
       active learners
     .row
     Join the community
-  .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.ms-md-3.hover-card-pink.visible
+  = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-pink visible d-none d-md-block ms-md-3" do
     %h1
       .fa.fa-infinity.display-5
     .fw-bold
@@ -47,115 +47,112 @@
     .row
     Learn on your schedule
 
-.container.mt-3.mb-5
-%hr.my-4
-%h2.banner_title_small
-  Popular courses
-#accordionFlushExample.accordion.accordion-flush
-  .accordion-item.visible
-    %h2#flush-headingOne.accordion-header.visible
-      %button.accordion-button.collapsed.bg-light.text-black.visible{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
-        View
-    #collapseOne.accordion-collapse.collapse{"aria-labelledby" => "flush-headingOne", "data-bs-parent" => "#accordionFlush"}
-      .accordion-body
-        .slider_cont
-          .my-3.slider_item
-            .row.my-3
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[0]
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[1]
-              .col-12
-                = render 'courses/course', course: @courses[2]
-          .my-3.slider_item
-            .row.my-3
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[3]
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[4]
-              .col-12
-                = render 'courses/course', course: @courses[5]
-          .my-3.slider_item
-            .row.my-3
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[6]
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[7]
-              .col-12
-                = render 'courses/course', course: @courses[8]
+
+.container.mt-3.mb-5.border-min.p-3
+  %div.text-black.mt-5.banner_title.small_title.mb-5
+    What to learn next?
+  %h2.banner_title_small.mb-3
+    Courses for you
+  #accordionFlushExample.accordion.accordion-flush.shadow-sm
+    .accordion-item.visible
+      %h2#flush-headingOne.accordion-header.visible
+        %button.accordion-button.collapsed.bg-light.text-black.visible{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
+          View
+      #collapseOne.accordion-collapse.collapse{"aria-labelledby" => "flush-headingOne", "data-bs-parent" => "#accordionFlush"}
+        .accordion-body
+          .slider_cont
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[0]
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[1]
+                .col-12
+                  = render 'courses/course', course: @courses[2]
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[3]
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[4]
+                .col-12
+                  = render 'courses/course', course: @courses[5]
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[6]
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[7]
+                .col-12
+                  = render 'courses/course', course: @courses[8]
 
 
-.container.mb-5
-%hr.my-4
-%h2.banner_title_small
-  Top rated courses
-#accordionTwo.accordion.accordion-flush
-  .accordion-item
-    %h2#flush-headingTwo.accordion-header
-      %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
-        View
-    #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionFlush"}
-      .accordion-body
-        .slider_cont_2
-          .my-3.slider_item
-            .row.my-3
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[0]
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[1]
-              .col-12
-                = render 'courses/course', course: @courses[2]
-          .my-3.slider_item
-            .row.my-3
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[3]
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[4]
-              .col-12
-                = render 'courses/course', course: @courses[5]
-          .my-3.slider_item
-            .row.my-3
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[6]
-              .col-12.mb-3
-                = render 'courses/course', course: @courses[7]
-              .col-12
-                = render 'courses/course', course: @courses[8]
+  %h2.banner_title_small.my-4
+    Top rated courses
+  #accordionTwo.accordion.accordion-flush.shadow-sm
+    .accordion-item
+      %h2#flush-headingTwo.accordion-header
+        %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
+          View
+      #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionFlush"}
+        .accordion-body
+          .slider_cont_2
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[0]
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[1]
+                .col-12
+                  = render 'courses/course', course: @courses[2]
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[3]
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[4]
+                .col-12
+                  = render 'courses/course', course: @courses[5]
+            .my-3.slider_item
+              .row.my-3
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[6]
+                .col-12.mb-3
+                  = render 'courses/course', course: @courses[7]
+                .col-12
+                  = render 'courses/course', course: @courses[8]
 
-  .container
-  %hr.my-4
-  %h2.banner_title_small
+  %h2.banner_title_small.my-4
     Latest courses
-  #accordionThree.accordion.accordion-flush
+  #accordionThree.accordion.accordion-flush.shadow-sm
     .accordion-item
       %h2#flush-headingThree.accordion-header
         %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}
           View
-      #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionFlush"}
-        .accordion-body
-          .slider_cont_3
-            .my-3.slider_item
-              .row.my-3
-                .col-12.mb-3
-                  = render 'courses/course', course: @latest_courses[0]
-                .col-12.mb-3
-                  = render 'courses/course', course: @latest_courses[1]
-                .col-12
-                  = render 'courses/course', course: @latest_courses[2]
-            .my-3.slider_item
-              .row.my-3
-                .col-12.mb-3
-                  = render 'courses/course', course: @latest_courses[3]
-                .col-12.mb-3
-                  = render 'courses/course', course: @latest_courses[4]
-                .col-12
-                  = render 'courses/course', course: @latest_courses[5]
-            .my-3.slider_item
-              .row.my-3
-                .col-12.mb-3
-                  = render 'courses/course', course: @latest_courses[6]
-                .col-12.mb-3
-                  = render 'courses/course', course: @latest_courses[7]
-                .col-12
-                  = render 'courses/course', course: @latest_courses[8]
-    %hr
+    #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionFlush"}
+      .accordion-body
+        .slider_cont_3
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @latest_courses[0]
+              .col-12.mb-3
+                = render 'courses/course', course: @latest_courses[1]
+              .col-12
+                = render 'courses/course', course: @latest_courses[2]
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @latest_courses[3]
+              .col-12.mb-3
+                = render 'courses/course', course: @latest_courses[4]
+              .col-12
+                = render 'courses/course', course: @latest_courses[5]
+          .my-3.slider_item
+            .row.my-3
+              .col-12.mb-3
+                = render 'courses/course', course: @latest_courses[6]
+              .col-12.mb-3
+                = render 'courses/course', course: @latest_courses[7]
+              .col-12
+                = render 'courses/course', course: @latest_courses[8]

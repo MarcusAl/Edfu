@@ -9,3 +9,8 @@
 .inline {
   display: inline-flex !important;
 }
+
+.border-min {
+  border: 0.5px solid rgba(254, 193, 11, 0.2);
+  border-radius: 10px;
+}
