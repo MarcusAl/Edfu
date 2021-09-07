@@ -7,6 +7,8 @@ require('@rails/ujs').start();
 require('turbolinks').start();
 require('@rails/activestorage').start();
 require('channels');
+//= require jquery
+//= require jquery_ujs
 
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap';
@@ -31,3 +33,14 @@ darkReaderHelper();
 
 // Sliders handler
 slideHelpers();
+
+// Dismiss Alerts
+document.addEventListener('turbolinks:load', () => {
+  window.setTimeout(function () {
+    $('.alert')
+      .fadeTo(500, 0)
+      .slideUp(500, function () {
+        $(this).remove();
+      });
+  }, 1500);
+});
