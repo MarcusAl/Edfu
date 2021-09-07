@@ -13,7 +13,7 @@ export const slideHelpers = () => {
       swipeAngle: false,
       speed: 400,
       edgePadding: 20,
-      preventScrollOnTouch: 'force',
+      preventScrollOnTouch: 'auto',
       responsive: {
         350: {
           items: 1,
@@ -36,7 +36,7 @@ export const slideHelpers = () => {
       swipeAngle: false,
       speed: 400,
       edgePadding: 20,
-      preventScrollOnTouch: 'force',
+      preventScrollOnTouch: 'auto',
       responsive: {
         350: {
           items: 1,
@@ -59,7 +59,7 @@ export const slideHelpers = () => {
       swipeAngle: false,
       speed: 400,
       edgePadding: 20,
-      preventScrollOnTouch: 'force',
+      preventScrollOnTouch: 'auto',
       responsive: {
         350: {
           items: 1,
