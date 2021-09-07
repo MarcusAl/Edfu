@@ -1,16 +1,17 @@
 
 .container-fluid-md
   .p-5.text-dark.bg-light.rounded-3.hero_cont.w-100
-    .row.justify-content-center.align-content-center.w-md-75.bottom-pos
-      .col-12.col-md-11.visible
-        %h1.fw-bold.text-white.mt-5.banner_title Learn in your own time
-        .form-inline.w-100
-          = form_tag(courses_path, method: :get) do
-            .input-group
-              %button.btn.btn-lg.btn-cta.visible{:type => "submit"}
-                %i.fas.fa-search{"aria-hidden" => "true"}
-              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for anything", class: 'form-control border border-light'
 
+%div.text-black.mt-3.banner_title
+  Education. For. 
+  %span.cursive_font.ms-3 You.
+.col-12.visible.d-md-none
+  .form-inline.w-100
+    = form_tag(courses_path, method: :get) do
+      .input-group
+        %button.btn.btn-lg.btn-cta.visible{:type => "submit"}
+          %i.fas.fa-search{"aria-hidden" => "true"}
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for anything", class: 'form-control border border-light'
 .card-group.container-fluid-md.mt-3.row.mx-auto
   .card.card-body.col-12.text-center.p-5.bg-light.heavy_round.border-0.hover-card-blue.visible.d-none.d-md-block
     %h1
