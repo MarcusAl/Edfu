@@ -52,7 +52,7 @@
   top: 0;
   left: 0;
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
   height: 100%;
   background: linear-gradient(
     to top,
@@ -86,10 +86,34 @@
   //   // bottom: 20px;
   // }
   .hero_cont:after {
-    width: 80%;
-    height: 120%;
+    width: 90%;
+    height: 180%;
     top: -100px;
     border-radius: 0;
     transform: skew(-60deg);
+  }
+}
+
+@media screen and (max-height: 667px) {
+  .hero_cont {
+    height: 30vh;
+  }
+
+  .hero_cont:after {
+    width: 80%;
+    height: 200%;
+    top: -100px;
+    border-radius: 0;
+    transform: skew(-60deg);
+  }
+  .banner_title {
+    font-size: 22px;
+  }
+  .banner_title_small {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .cursive_font {
+    font-size: 32px;
   }
 }
