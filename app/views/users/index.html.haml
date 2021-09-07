@@ -1,11 +1,41 @@
 .container
-  %h1 
+  %h1
     Users:
     = @users.count
+  .form-inline.col-md-6.sticky-md-top
+    = search_form_for @q do |f|
+      = f.search_field :email_cont, placeholder: 'email', class: 'form-control mb-3'
+      = f.search_field :sign_in_count_eq, placeholder: 'sign in count', class: 'form-control mb-3'
+      = f.search_field :email_or_sign_in_count_eq, placeholder: 'email or sign in count', class: 'form-control mb-3'
+      = f.submit :class => "form-control mb-1 btn-warning btn w-50"
+    = link_to users_path, class: "btn btn-secondary my-3" do
+      .fa.fa-sync.lead
+    .ml-2
 
 .container
-  .row
-    - @users.each do |user|
-      .col-4.my-3
-        = render 'users/user', user: user
+  .table-responsive-md
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th{:scope => "col"} id
+          %th{:scope => "col"}= sort_link(@q, :email)
+          %th{:scope => "col"} created_at
+          %th{:scope => "col"}= 'sign_in_count'.humanize
+          %th{:scope => "col"}= 'current_sign_in_at'.humanize
+          %th{:scope => "col"}= 'last_sign_in_at'.humanize
+          %th{:scope => "col"}= 'current_sign_in_ip'.humanize
+          %th{:scope => "col"}= 'last_sign_in_ip'.humanize
+      %tbody
+        - @users.each do |user|
+          %tr
+            %th{:scope => "row"}= user.id
+            %td= user.email
+            %td= user.created_at
+            %td= user.sign_in_count
+            %td= user.current_sign_in_at
+            %td= user.last_sign_in_at
+            %td= user.current_sign_in_ip
+            %td= user.last_sign_in_ip
+
+
 %br

@@ -1,12 +1,25 @@
-.container
-  %h1 
-    Courses:
-    = @courses.count
 
-.container
-  .row
-    - @courses.each do |course|
-      .col-4.my-3
-        = render 'courses/course', course: course
+.row
+  .col-md-2.border-end.border-secondary
+    .form-inline.sticky-md-top
+      = search_form_for @q do |f|
+        %h2
+          Filter courses:
+        = f.search_field :title_cont, placeholder: 'Title', class: 'form-control form-control-sm mb-2'
+        = f.search_field :short_description_cont, placeholder: 'Description', class: 'form-control form-control-sm mb-2'
+        = f.search_field :language_cont, placeholder: 'Language', class: 'form-control form-control-sm mb-2'
+        = f.search_field :level_cont, placeholder: 'Level', class: 'form-control form-control-sm mb-2'
+        = f.search_field :price_eq, placeholder: 'Price', class: 'form-control form-control-sm mb-2'
+        = f.submit :class => "form-control mb-1 btn-warning btn w-50"
+      = link_to courses_path, class: "btn btn-secondary my-3" do
+        .fa.fa-sync.lead
+      %h1 
+        Courses:
+        = @courses.count
+  .col-md-10
+    .row
+      - @courses.each do |course|
+        .col-md-4.mb-3.col-12
+          = render 'courses/course', course: course
 %br
 
