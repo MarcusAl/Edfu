@@ -1,11 +1,11 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light.visible.border-bottom
   .container.p-md-1.d-inline-flex.w-100
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
     %a.navbar-brand{:href => "/"}
       %i.fas.fa-flag
       Edfu
     - if current_user
-      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
-        %span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         %ul.navbar-nav.me-auto.my-md-0.my-1.justify-content-center
           = link_to root_path, class: "nav-link small #{'active fw-bold' if current_page?(root_path)}" do
@@ -44,8 +44,9 @@
                   %b Sign out
     - else
       %ul.navbar-nav
-        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
-        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'text-muted'
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Log In', new_user_registration_path, class: 'text-muted'
 
 .w-100.shadow.d-md-block.d-none
   - if current_user
