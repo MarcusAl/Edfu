@@ -1,7 +1,8 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light.visible.border-bottom
   .container.p-md-1.d-inline-flex.w-100
-    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
-      %span.navbar-toggler-icon
+    - if current_user
+      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
     = link_to root_path, class: "navbar-brand" do
       = image_tag 'temple.png', alt: "logo", class: 'logo_img'
       .fw-bold.me-1.d-md-inline-block.d-none.text_logo
