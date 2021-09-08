@@ -10,11 +10,11 @@
         = f.search_field :language_cont, placeholder: 'Language', class: 'form-control form-control-sm mb-2'
         = f.search_field :level_cont, placeholder: 'Level', class: 'form-control form-control-sm mb-2'
         = f.search_field :price_eq, placeholder: 'Price', class: 'form-control form-control-sm mb-2'
-        = f.submit :class => "form-control mb-1 btn-warning btn w-50"
-      = link_to courses_path, class: "btn btn-secondary my-3" do
-        .fa.fa-sync.lead
-    %h4.badge.bg-primary         
+        = link_to "Refresh", courses_path, class: "me-2 btn btn-outline-secondary mt-2 form-control-sm"
+        = f.submit :class => "form-control-sm mt-2 btn-warning btn w-50"
+    %h4.badge.bg-secondary.p-2.mt-3         
       = @courses.count
+      results
   .col-md-10
     .row
       - @courses.each do |course|

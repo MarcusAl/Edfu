@@ -13,18 +13,24 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1 or /courses/1.json
-  def show; end
+  def show
+    @q = Course.ransack(params[:q])
+  end
 
   # GET /courses/new
   def new
+    @q = Course.ransack(params[:q])
     @course = Course.new
   end
 
   # GET /courses/1/edit
-  def edit; end
+  def edit
+    @q = Course.ransack(params[:q])
+  end
 
   # POST /courses or /courses.json
   def create
+    @q = Course.ransack(params[:q])
     @course = Course.new(course_params)
     @course.user = current_user
 
@@ -41,6 +47,7 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1 or /courses/1.json
   def update
+    @q = Course.ransack(params[:q])
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
@@ -54,6 +61,7 @@ class CoursesController < ApplicationController
 
   # Delete a course
   def destroy
+    @q = Course.ransack(params[:q])
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }

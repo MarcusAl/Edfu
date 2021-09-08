@@ -14,3 +14,34 @@
   border: 0.5px solid rgba(254, 193, 11, 0.2);
   border-radius: 10px;
 }
+
+.text_logo {
+  color: rgb(73, 65, 114);
+}
+
+@keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.strike {
+  position: relative;
+  font-size: 20px;
+}
+.strike::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: black;
+  animation-name: strike;
+  animation-duration: 1.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

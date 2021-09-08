@@ -2,15 +2,14 @@
   .container.p-md-1.d-inline-flex.w-100
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
-    %a.navbar-brand{:href => "/"}
-      %i.fas.fa-flag
-      Edfu
+    = link_to root_path, class: "navbar-brand" do
+      = image_tag 'temple.png', alt: "logo", class: 'logo_img'
+      .fw-bold.me-1.d-md-inline-block.d-none.text_logo
+        Edfu
+      
     - if current_user
-      #navbarSupportedContent.collapse.navbar-collapse
-        %ul.navbar-nav.me-auto.my-md-0.my-1.justify-content-center
-          = link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do
-            .fa.fa-home
-            Home
+      #navbarSupportedContent.collapse.navbar-collapse.justify-content-between
+        %ul.navbar-nav.my-md-0.my-1
           %ul.navbar-nav.my-md-0.my-1
             = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
               .fas.fa-graduation-cap
@@ -23,13 +22,14 @@
             = link_to new_course_path, class: "nav-link #{'active fw-bold' if current_page?(new_course_path)}" do
               .fas.fa-plus
               New Course
-        %ul.navbar-nav.d-flex.justify-content-center
+        %ul.navbar-nav
           - if current_user
-            = search_form_for @q do |f|
-              .form-inline.d-flex
-                = f.search_field :title_cont, placeholder: 'Search', class: 'form-control form-control-sm border-end-0'
-                %button.btn.btn-outline-dark{:type => "submit", class: 'form-control form-control-sm w-25'}
-                  %i.fas.fa-search{"aria-hidden" => "true"}
+            - unless current_page?(users_path)
+              = search_form_for @q do |f|
+                .form-inline.d-flex
+                  = f.search_field :title_cont, placeholder: 'Search', class: 'form-control form-control-sm border-end-0'
+                  %button.btn.btn-outline-dark.btn-cta{:type => "submit", class: 'form-control form-control-sm w-25'}
+                    %i.fas.fa-search{"aria-hidden" => "true"}
             %li.nav-item.dropdown
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
                 .fa.fa-user

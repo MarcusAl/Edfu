@@ -1,12 +1,15 @@
+import { bottom } from '@popperjs/core';
+
 export const slideHelpers = () => {
   document.addEventListener('turbolinks:load', () => {
     const slider = tns({
       container: '.slider_cont',
       items: 2,
       gutter: 10,
-      controls: false,
+      controls: true,
+      controlsPosition: 'top',
+      controlsText: ['<', '>'],
       nav: false,
-      navPosition: 'bottom',
       navAsThumbnails: true,
       slideBy: 'page',
       mouseDrag: true,
@@ -27,9 +30,10 @@ export const slideHelpers = () => {
       container: '.slider_cont_2',
       items: 2,
       gutter: 10,
-      controls: false,
+      controls: true,
+      controlsPosition: 'top',
+      controlsText: ['<', '>'],
       nav: false,
-      navPosition: 'bottom',
       navAsThumbnails: true,
       slideBy: 'page',
       mouseDrag: true,
@@ -50,9 +54,10 @@ export const slideHelpers = () => {
       container: '.slider_cont_3',
       items: 2,
       gutter: 10,
-      controls: false,
+      controls: true,
+      controlsPosition: 'top',
+      controlsText: ['<', '>'],
       nav: false,
-      navPosition: 'bottom',
       navAsThumbnails: true,
       slideBy: 'page',
       mouseDrag: true,

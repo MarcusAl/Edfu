@@ -2,19 +2,21 @@
 .container-fluid-md
   .p-5.text-dark.bg-light.rounded-3.hero_cont.w-100
 
-%div.text-black.mt-3.banner_title
-  Education. For. 
-  %span.cursive_font.ms-3 You.
+    %div.text-black.banner_title.visible.hero_message_cont.shadow.sm
+      Education. For. 
+      %span.strike
+        them.
+      %span.cursive_font.ms-3 You.
 - if current_user
-  .col-12.visible.d-md-none.mb-5.mb-md-0
-    .form-inline.w-100
-      = form_tag(courses_path, method: :get) do
-        .input-group
-          %button.btn.btn-lg.btn-cta.visible{:type => "submit"}
-            %i.fas.fa-search{"aria-hidden" => "true"}
-          = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search for anything", class: 'form-control border border-light'
+  .col-12.visible.d-md-none.mb-5.mb-md-0.border
+    = search_form_for @q do |f|
+      .form-inline.d-flex
+        %button.btn.btn-lg.btn-cta.visible{:type => "submit"}
+          %i.fas.fa-search{"aria-hidden" => "true"}
+        = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control border border-light'
+      
 .card-group.container-fluid-md.mt-3.row.mx-auto
-  = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-blue visible d-md-block" do
+  = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-blue visible d-md-block main_card_cont" do
     %h1
       .fa.fa-graduation-cap.display-5
     .fw-bold
@@ -50,7 +52,7 @@
 
 .container.mt-3.mb-5.border-min.p-3
   %div.text-black.mt-5.banner_title.small_title.mb-5
-    What to learn next?
+    Ready to learn?
   %h2.banner_title_small.mb-3
     Courses for you
   #accordionFlushExample.accordion.accordion-flush.shadow-sm

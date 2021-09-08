@@ -1,7 +1,17 @@
+.logo_img {
+  max-height: 2em;
+  max-width: 2em;
+  background: rgba(255, 255, 255, 0.4);
+  border: rgba(73, 65, 114, 0.8) solid 3px;
+  padding: 3px;
+  border-radius: 50%;
+}
+
 .btn-cta {
   // background-color: #7f303a;
-  background-color: rgba(254, 193, 11, 0.7);
+  background: rgba(236, 192, 207, 0.9);
   transition: 200ms ease-in;
+  color: white;
   // background-color: #160f29;
   // background-color: #330C2F;
   //2nd option
@@ -9,4 +19,37 @@
 
 .btn-cta:hover {
   background: rgba(236, 192, 207, 0.9);
+}
+
+.tns-controls {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  button {
+    font-size: 25px;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: #7768ae;
+    border: solid black 2px;
+    transition: 200ms ease-in;
+  }
+  button:hover {
+    background: rgba(236, 192, 207, 0.9);
+  }
+}
+
+.tns-controls:focus {
+  outline: none;
+}
+
+@media screen and (max-height: 740px) {
+  .tns-controls {
+    display: none;
+  }
+  .logo_img {
+    margin-right: 0 !important;
+  }
 }

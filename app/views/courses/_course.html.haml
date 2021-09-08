@@ -1,7 +1,6 @@
 .card.h-100.p-0.text-center
   .card-header.justify-content-evenly.d-inline-flex
     .card-title
-      .fa.fa-graduation-cap
       = link_to course.title, course_path(course), class: 'card-link text-decoration-none text-black fw-bold'
       = link_to '', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-times text-muted ms-3 text-decoration-none'
   .card-body
