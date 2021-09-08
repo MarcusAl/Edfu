@@ -8,12 +8,12 @@
         them.
       %span.cursive_font.ms-3 You.
 - if current_user
-  .col-12.visible.d-md-none.mb-5.mb-md-0.border
+  .col-12.visible.d-md-none.mb-5.mb-md-0
     = search_form_for @q do |f|
-      .form-inline.d-flex
-        %button.btn.btn-lg.btn-cta.visible{:type => "submit"}
+      .form-inline.d-flex.rounded-0
+        %button.btn.btn-lg.btn-cta.visible.rounded-0.rounded-start{:type => "submit"}
           %i.fas.fa-search{"aria-hidden" => "true"}
-        = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control border border-light'
+        = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control form-control-sm rounded-0 rounded-end'
       
 .card-group.container-fluid-md.mt-3.row.mx-auto
   = link_to courses_path, class: "card card-body text-black col-12 text-center p-5 bg-light heavy_round border-0 hover-card-blue visible d-md-block main_card_cont" do

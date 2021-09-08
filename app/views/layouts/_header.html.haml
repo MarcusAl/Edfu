@@ -27,8 +27,8 @@
             - unless current_page?(users_path)
               = search_form_for @q do |f|
                 .form-inline.d-flex
-                  = f.search_field :title_cont, placeholder: 'Search', class: 'form-control form-control-sm border-end-0'
-                  %button.btn.btn-outline-dark.btn-cta{:type => "submit", class: 'form-control form-control-sm w-25'}
+                  = f.search_field :title_cont, placeholder: 'Search', class: 'form-control form-control-sm border-end-0 rounded-0 rounded-start'
+                  %button.btn.btn-outline-dark.btn-cta{:type => "submit", class: 'form-control form-control-sm w-25 rounded-0 rounded-end'}
                     %i.fas.fa-search{"aria-hidden" => "true"}
             %li.nav-item.dropdown
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
