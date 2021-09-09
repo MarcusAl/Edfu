@@ -5,6 +5,15 @@
   text-decoration: none !important;
 }
 
+input:focus,
+textarea:focus,
+button:focus,
+trix-editor:focus,
+select:focus {
+  outline: solid 2px rgba(73, 65, 114, 0.8) !important;
+  box-shadow: 0 0 10px #719ece;
+}
+
 .form-control.is-invalid,
 .form-control.is-valid {
   background-image: none;
