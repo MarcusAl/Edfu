@@ -32,7 +32,7 @@
   position: absolute;
   left: 2em;
   padding: 1em;
-  top: 3em;
+  top: 2em;
   background: whitesmoke;
   border-radius: 5px;
   width: 8em;
@@ -40,7 +40,7 @@
 
 .banner_title,
 .banner_title_small {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 500;
   letter-spacing: 0.5px !important;
   font-family: 'Merriweather', serif !important;
@@ -49,7 +49,7 @@
 .cursive_font {
   font-family: 'Great Vibes', cursive;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 60px;
   margin-top: 50px;
 }
 
@@ -77,7 +77,7 @@
   z-index: 1;
 }
 
-@media screen and (max-height: 740px) {
+@media (max-width: 720px) and (max-height: 740px) {
   .hero_cont {
     height: 35vh;
     margin-bottom: 15px;
@@ -123,7 +123,7 @@
   }
 }
 
-@media screen and (max-height: 667px) {
+@media (max-width: 720px) and (max-height: 667px) {
   .hero_cont {
     height: 30vh;
     .hero_message_cont {
