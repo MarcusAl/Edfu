@@ -1,0 +1,21 @@
+%footer
+  .bg-purple.p-4.border-top.border-dark.border-2
+    .container
+      .row.text-light-grey
+        .col-md-4
+          Copyright
+          © 
+          = Time.now.year
+          Edfu org
+          .row
+          .fa.fa-envelope
+          = mail_to 'edfuhelper@gmail.com', 'Email me', class: 'text-light-grey'
+          .row
+        .col-md-4
+          Privacy policy
+          .row
+          Terms and conditions
+        .col-md-4
+          About us
+          .row
+          = link_to 'Teach on Edfu', new_course_path, class: 'text-light-grey'

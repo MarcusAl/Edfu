@@ -16,7 +16,28 @@
 }
 
 .text_logo {
-  color: rgb(73, 65, 114);
+  color: #38316e;
+}
+
+.bg-purple {
+  background: rgba(73, 65, 114, 0.8);
+}
+
+.bg-darkred {
+  background: #762933;
+}
+
+.text-light-grey {
+  color: #ddd;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #38316a;
 }
 
 @keyframes strike {

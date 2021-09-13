@@ -11,7 +11,7 @@
     = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-  %body
+  %body.d-flex.flex-column.min-vh-100
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"}
@@ -23,4 +23,6 @@
       = yield
       %br
     = render 'layouts/darkmodebtn'
+    .mt-auto
+    = render 'layouts/footer'
 
