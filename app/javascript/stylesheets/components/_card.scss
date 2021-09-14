@@ -10,18 +10,24 @@
 // }
 
 .hover-card-blue:hover,
-.hover-card-blue:active {
-  background: rgba(176, 173, 255, 0.6) !important;
-}
-
+.hover-card-blue:active,
 .hover-card-salmon:hover,
 .hover-card-salmon:active,
 .hover-card-aqua:hover,
 .hover-card-aqua:active,
 .hover-card-pink:hover,
 .hover-card-pink:active {
-  background: rgba(246, 189, 96, 0.9) !important;
+  background: #f6bd60 !important;
 }
+
+// .hover-card-salmon:hover,
+// .hover-card-salmon:active,
+// .hover-card-aqua:hover,
+// .hover-card-aqua:active,
+// .hover-card-pink:hover,
+// .hover-card-pink:active {
+//   background: rgba(246, 189, 96, 0.9) !important;
+// }
 
 // .hover-card-aqua:hover,
 // .hover-card-aqua:active {

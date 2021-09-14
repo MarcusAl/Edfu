@@ -1,23 +1,23 @@
-%nav.navbar.navbar-expand-md.navbar-light.bg-light.visible.border-bottom.w-100.justify-content-between.p-1
-  .container-fluid.p-md-1.d-inline-flex.w-100.justify-content-between.mx-3
+%nav.navbar.navbar-expand-md.navbar-light.bg-light.visible.border-bottom.border-1.w-100.justify-content-between.p-1
+  .container-fluid.p-md-1.d-inline-flex.w-100.justify-content-between.mx-2
     - if current_user
       %button.navbar-toggler.bg-purple.text-white{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
         %span.fas.fa-bars
     = link_to root_path, class: "navbar-brand" do
+      %h2.fw-bold.d-md-inline-block.d-none
+        edfu
       = image_tag 'temple.png', alt: "logo", class: 'logo_img'
-      .fw-bold.d-md-inline-block.d-none
-        Edfu
     %ul.navbar-nav.me-1.d-none.d-md-block
       = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
         .fas.fa-graduation-cap
         Courses
 
     -# Navbar Search Section 
-    %ul.navbar-nav.d-none.d-md-block.w-50.rounded-heavy
+    %ul.navbar-nav.d-none.d-md-block.w-md-50.rounded-heavy
       - if current_user
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
-          .form-inline.d-flex.rounded-heavy.bg-light.p-1.border.border-1
-            %button.btn.btn-outline-dark.btn-cta.btn-sm{:type => "submit", class: 'form-control form-control-md border-0 rounded-heavy rounded-end-0'}
+          .form-inline.d-flex.rounded-heavy.bg-light.p-1.border.border-1.border-dark
+            %button.btn.btn-outline-dark.btn-cta.btn-sm.me-1{:type => "submit", class: 'form-control form-control-md border-0 rounded-end-0'}
               %i.fas.fa-search{"aria-hidden" => "true"}
             = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control form-control-md border-0 rounded-heavy bg-transparent'
       
@@ -60,7 +60,7 @@
         %li.nav-item= link_to 'Log In', new_user_session_path, class: 'text-muted'
 
 -# Sub Navbar
-.w-100.shadow.d-lg-block.d-none
+.w-100.d-lg-block.d-none.shadow-lg.bg-light
   - if current_user
     %ul.nav.justify-content-center
       %li.nav-item.p-1

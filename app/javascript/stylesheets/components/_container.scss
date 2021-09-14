@@ -1,13 +1,13 @@
 .hero_cont {
-  background: url('~images/thought.jpg');
+  background: url('~images/lady_teal.jpg');
   position: relative;
   overflow: hidden;
-  background-position: center center;
+  background-position: 50% 65%;
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;
-  width: 80vw;
-  height: 50vh;
+  // width: 60vw;
+  height: 55vh;
   display: flex;
   border-radius: 0 !important;
   justify-content: center;
@@ -21,11 +21,11 @@
     left: 0;
     background-image: linear-gradient(
       to bottom right,
-      #645dd7,
-      #fe4a49
+      #7abcc8,
+      #645dd7
     );
-    // 7ABCC8
-    opacity: 0.5;
+    // #fe4a49
+    opacity: 0.1;
   }
 }
 
@@ -52,6 +52,30 @@
   font-weight: 600;
   font-size: 60px;
   margin-top: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.cursive_font:after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  right: -15px;
+  background: #f6bd60;
+  padding: 5px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.cursive_font:before {
+  content: '';
+  bottom: 10px;
+  left: 35px;
+  position: absolute;
+  background: #f6bd60;
+  padding: 35px;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .banner_title_small {
@@ -67,10 +91,10 @@
   position: absolute;
   top: 0;
   left: -20em;
-  width: 120%;
+  width: 140%;
   height: 100%;
   background: linear-gradient(
-    to top,
+    to bottom,
     rgba(254, 193, 11, 0.2),
     rgba(255, 255, 255, 0)
   );
@@ -100,7 +124,17 @@
   }
 
   .cursive_font {
-    font-size: 50px;
+    font-size: 40px;
+    padding: 10px;
+  }
+
+  .cursive_font:before {
+    padding: 15px;
+    border-radius: 50%;
+  }
+
+  .cursive_font:after {
+    display: none;
   }
 
   .small_title {
@@ -117,6 +151,7 @@
     top: -100px;
     border-radius: 0;
     transform: skew(-60deg);
+    display: none;
   }
   .main_card_cont {
     margin-top: 0 !important;

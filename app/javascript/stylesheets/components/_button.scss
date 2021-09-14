@@ -9,17 +9,19 @@
 
 .btn-cta {
   // background-color: #7f303a;
-  background: #38316e;
+  // background: #38316e;
   transition: 150ms ease-in;
-  color: white;
-  width: 60px;
+  color: black;
+  width: 42px;
+  border-radius: 100% !important;
+  padding: 10px;
   // background-color: #160f29;
   // background-color: #330C2F;
   //2nd option
 }
 
 .btn-cta2 {
-  background: rgba(236, 192, 207, 0.9);
+  background: rgba(73, 65, 114, 0.8);
   transition: 150ms ease-in;
   color: white;
 }

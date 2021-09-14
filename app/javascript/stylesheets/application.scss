@@ -11,8 +11,8 @@ button:focus,
 trix-editor:focus,
 select:focus,
 form:focus {
-  outline: solid 2px rgba(73, 65, 114, 0.8) !important;
-  box-shadow: 0 0 10px #719ece;
+  // outline: solid 2px rgba(73, 65, 114, 0.8) !important;
+  box-shadow: 0 0 3pt 2pt rgba(73, 65, 114, 0.8) !important;
 }
 
 .form-control.is-invalid,

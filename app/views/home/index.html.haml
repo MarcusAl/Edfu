@@ -1,12 +1,13 @@
 
 .container-fluid
-  .p-5.text-dark.bg-light.hero_cont.w-100
+  .p-5.text-dark.bg-light.hero_cont.w-100.mt-0
 
     %div.text-black.banner_title.visible.hero_message_cont.shadow.sm.rounded-0
       Education. For. 
+      -# %span.strike
+      -#   them.
       %span.strike
-        them.
-      %span.cursive_font.ms-3 You.
+        %span.cursive_font.ms-3 You
 .container
   - if current_user
     .col-12.visible.d-md-none.mb-5.mb-md-0
