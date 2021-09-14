@@ -27,8 +27,29 @@
   background: #762933;
 }
 
+.bg-lightyellow {
+  background: #f6bd60;
+}
+
+.white {
+  color: #fff !important;
+}
+
 .text-light-grey {
   color: #ddd;
+}
+
+.text-white-75 {
+  color: #eed;
+}
+
+.rounded-heavy {
+  border-radius: 50px !important;
+}
+
+.rounded-heavy:focus {
+  outline: solid 2px rgba(102, 90, 161, 0.8) !important;
+  box-shadow: none;
 }
 
 a {

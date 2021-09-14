@@ -7,8 +7,9 @@
   // background-attachment: fixed;
   background-size: cover;
   width: 80vw;
-  height: 60vh;
+  height: 50vh;
   display: flex;
+  border-radius: 0 !important;
   justify-content: center;
   // z-index: -2;
   &:before {

@@ -1,17 +1,30 @@
-%nav.navbar.navbar-expand-md.navbar-light.bg-light.visible.border-botto.w-100
-  .container.p-md-1.d-inline-flex.w-100
+%nav.navbar.navbar-expand-md.navbar-light.bg-light.visible.border-bottom.w-100.justify-content-between.p-1
+  .container-fluid.p-md-1.d-inline-flex.w-100.justify-content-between.mx-3
     - if current_user
-      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
-        %span.navbar-toggler-icon
+      %button.navbar-toggler.bg-purple.text-white{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
+        %span.fas.fa-bars
     = link_to root_path, class: "navbar-brand" do
       = image_tag 'temple.png', alt: "logo", class: 'logo_img'
-      .fw-bold.me-1.d-md-inline-block.d-none.text_logo
+      .fw-bold.d-md-inline-block.d-none
         Edfu
+    %ul.navbar-nav.me-1.d-none.d-md-block
+      = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
+        .fas.fa-graduation-cap
+        Courses
+
+    -# Navbar Search Section 
+    %ul.navbar-nav.d-none.d-md-block.w-50.rounded-heavy
+      - if current_user
+        = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+          .form-inline.d-flex.rounded-heavy.bg-light.p-1.border.border-1
+            %button.btn.btn-outline-dark.btn-cta.btn-sm{:type => "submit", class: 'form-control form-control-md border-0 rounded-heavy rounded-end-0'}
+              %i.fas.fa-search{"aria-hidden" => "true"}
+            = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control form-control-md border-0 rounded-heavy bg-transparent'
       
     - if current_user
-      #navbarSupportedContent.collapse.navbar-collapse.justify-content-between
+      #navbarSupportedContent.collapse.navbar-collapse.justify-content-end
         %ul.navbar-nav.my-md-0.my-1
-          %ul.navbar-nav.my-md-0.my-1
+          %ul.navbar-nav.my-md-0.my-1.d-block.d-md-none
             = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
               .fas.fa-graduation-cap
               Courses
@@ -28,21 +41,7 @@
               = link_to home_activity_path, class: "nav-link #{'active fw-bold' if current_page?(home_activity_path)}" do
                 .fas.fa-bell
                 Activity
-        -# Navbar Search Section 
-        %ul.navbar-nav
-          - if current_user
-            - unless current_page?(users_path)
-              = search_form_for @q do |f|
-                .form-inline.d-flex
-                  = f.search_field :title_cont, placeholder: 'Search', class: 'form-control form-control-sm border-end-0 rounded-0 rounded-start'
-                  %button.btn.btn-outline-dark.btn-cta{:type => "submit", class: 'form-control form-control-sm w-25 rounded-0 rounded-end'}
-                    %i.fas.fa-search{"aria-hidden" => "true"}
-            - else
-              = search_form_for @c do |f|
-                .form-inline.d-flex
-                  = f.search_field :title_cont, placeholder: 'Search', class: 'form-control form-control-sm border-end-0 rounded-0 rounded-start'
-                  %button.btn.btn-outline-dark.btn-cta{:type => "submit", class: 'form-control form-control-sm w-25 rounded-0 rounded-end'}
-                    %i.fas.fa-search{"aria-hidden" => "true"}
+
             %li.nav-item.dropdown
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
                 .fa.fa-user
@@ -64,19 +63,19 @@
 .w-100.shadow.d-lg-block.d-none
   - if current_user
     %ul.nav.justify-content-center
-      %li.nav-item.p-2
-        = link_to "Psychology", courses_path(q: {title_cont: "Psychology"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Psychology"))}"
-      %li.nav-item.p-2
-        = link_to "Criminology", courses_path(q: {title_cont: "Criminology"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Criminology"))}"
-      %li.nav-item.p-2
-        = link_to "Arts", courses_path(q: {title_cont: "Arts"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Arts"))}"
-      %li.nav-item.p-2
-        = link_to "Forensic Science", courses_path(q: {title_cont: "Forensic Science"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Forensic Science"))}"
-      %li.nav-item.p-2
-        = link_to "Engineering", courses_path(q: {title_cont: "Engineering"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Engineering"))}"
-      %li.nav-item.p-2
-        = link_to "Computer Science", courses_path(q: {title_cont: "Computer Science"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Computer Science"))}"
-      %li.nav-item.p-2
-        = link_to "Teaching", courses_path(q: {title_cont: "Teaching"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Teaching"))}"
-      %li.nav-item.p-2
-        = link_to "Medicine", courses_path(q: {title_cont: "Medicine"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Medicine"))}"
+      %li.nav-item.p-1
+        = link_to "Psychology", courses_path(courses_search: {title_cont: "Psychology"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Psychology"))}"
+      %li.nav-item.p-1
+        = link_to "Criminology", courses_path(courses_search: {title_cont: "Criminology"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Criminology"))}"
+      %li.nav-item.p-1
+        = link_to "Arts", courses_path(courses_search: {title_cont: "Arts"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Arts"))}"
+      %li.nav-item.p-1
+        = link_to "Forensic Science", courses_path(courses_search: {title_cont: "Forensic Science"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Forensic Science"))}"
+      %li.nav-item.p-1
+        = link_to "Engineering", courses_path(courses_search: {title_cont: "Engineering"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Engineering"))}"
+      %li.nav-item.p-1
+        = link_to "Computer Science", courses_path(courses_search: {title_cont: "Computer Science"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Computer Science"))}"
+      %li.nav-item.p-1
+        = link_to "Teaching", courses_path(courses_search: {title_cont: "Teaching"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Teaching"))}"
+      %li.nav-item.p-1
+        = link_to "Medicine", courses_path(courses_search: {title_cont: "Medicine"}), class: "nav-link text-black small #{'active fw-bold' if current_page?(courses_path(:title => "Medicine"))}"

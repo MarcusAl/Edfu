@@ -10,7 +10,7 @@
     = course.created_at.strftime('%d-%b-%Y')
     .row
     .fa.fa-chalkboard-teacher
-    = course.user
+    = course.user.username
   .card-footer
     .badge.bg-secondary
       = course.language

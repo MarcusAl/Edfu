@@ -2,7 +2,7 @@
 .hover-card-salmon,
 .hover-card-aqua,
 .hover-card-pink {
-  transition: 350ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 // .hover-card-pink {
@@ -15,16 +15,20 @@
 }
 
 .hover-card-salmon:hover,
-.hover-card-salmon:active {
-  background: rgba(255, 218, 194, 0.9) !important;
-}
-
+.hover-card-salmon:active,
 .hover-card-aqua:hover,
-.hover-card-aqua:active {
-  background: rgba(181, 244, 247, 0.9) !important;
-}
-
+.hover-card-aqua:active,
 .hover-card-pink:hover,
 .hover-card-pink:active {
-  background: rgba(236, 192, 207, 0.9) !important;
+  background: rgba(246, 189, 96, 0.9) !important;
 }
+
+// .hover-card-aqua:hover,
+// .hover-card-aqua:active {
+//   background: rgba(181, 244, 247, 0.9) !important;
+// }
+
+// .hover-card-pink:hover,
+// .hover-card-pink:active {
+//   background: rgba(236, 192, 207, 0.9) !important;
+// }

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :courses
-  resources :users
+  resources :users, only: %i[index edit show update]
   get '/user' => 'home#index', :as => :user_root
   root 'home#index'
   get 'home/index'

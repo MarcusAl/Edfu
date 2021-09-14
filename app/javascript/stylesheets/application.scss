@@ -9,7 +9,8 @@ input:focus,
 textarea:focus,
 button:focus,
 trix-editor:focus,
-select:focus {
+select:focus,
+form:focus {
   outline: solid 2px rgba(73, 65, 114, 0.8) !important;
   box-shadow: 0 0 10px #719ece;
 }
@@ -17,6 +18,10 @@ select:focus {
 .form-control.is-invalid,
 .form-control.is-valid {
   background-image: none;
+}
+
+.nav-link {
+  font-size: 15px !important;
 }
 
 #dark_mode_btn {
@@ -27,7 +32,7 @@ select:focus {
   color: #fff;
   padding: 12px;
   border-radius: 50%;
-  background: #38316e;
+  background: rgba(73, 65, 114, 0.8);
   z-index: 1000;
 }
 

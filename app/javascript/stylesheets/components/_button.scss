@@ -10,15 +10,27 @@
 .btn-cta {
   // background-color: #7f303a;
   background: #38316e;
-  transition: 200ms ease-in;
+  transition: 150ms ease-in;
   color: white;
+  width: 60px;
   // background-color: #160f29;
   // background-color: #330C2F;
   //2nd option
 }
 
-.btn-cta:hover {
+.btn-cta2 {
   background: rgba(236, 192, 207, 0.9);
+  transition: 150ms ease-in;
+  color: white;
+}
+
+.btn-cta2:hover {
+  background: #38316e;
+  color: white;
+}
+
+.btn-cta:hover {
+  background: #f6bd60;
 }
 
 .tns-controls {

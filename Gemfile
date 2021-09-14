@@ -29,8 +29,9 @@ gem 'faker'
 gem 'friendly_id', '~> 5.4.0'
 gem 'haml-rails', '~> 2.0'
 gem 'public_activity'
+gem 'pundit'
 gem 'ransack'
-
+gem 'rolify'
 gem 'simple_form'
 
 # Reduces boot times through caching; required in config/boot.rb

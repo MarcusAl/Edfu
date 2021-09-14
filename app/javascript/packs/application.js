@@ -42,5 +42,5 @@ document.addEventListener('turbolinks:load', () => {
       .slideUp(500, function () {
         $(this).remove();
       });
-  }, 1500);
+  }, 2000);
 });
