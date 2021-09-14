@@ -44,17 +44,17 @@
                 .fas.fa-bell
                 Activity
 
-            %li.nav-item.dropdown
-              %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
-                .fa.fa-user
-                -# %b= current_user.email
-              %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-                = link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do
-                  .fa.fa-cog
-                  %b Account settings
-                = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
-                  .fa.fa-sign-out-alt
-                  %b Sign out
+          %li.nav-item.dropdown
+            %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+              .fa.fa-user
+              -# %b= current_user.email
+            %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+              = link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do
+                .fa.fa-cog
+                %b Account settings
+              = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
+                .fa.fa-sign-out-alt
+                %b Sign out
     - else
       %ul.navbar-nav.d-flex.justify-content-between
         %li.nav-item.me-4= link_to 'Sign Up', new_user_registration_path, class: 'text-muted'
