@@ -1,17 +1,5 @@
-<div class="container mt-3">
-  <div class="mx-auto w-75">
-
-<%= link_to root_path, class: "navbar-brand" do %>
-  <h2 class="fw-bold d-md-inline-block d-none">
-    edfu
-  </h2>
-<%= end %>
-
-<p>Welcome <%= @email %>!</p>
+<p>Welcome <%= @email %> to Edfu!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), class: "btn btn-warning" %></p>
-
-  </div>
-</div>
