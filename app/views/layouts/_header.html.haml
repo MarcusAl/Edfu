@@ -29,11 +29,12 @@
             = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
               .fas.fa-graduation-cap
               Courses
-          %ul.navbar-nav.my-md-0.my-1
-            = link_to new_course_path, class: "nav-link #{'active fw-bold' if current_page?(new_course_path)}" do
-              .fas.fa-plus
-              New Course
-          - if current_user.email == 'admin@example.com'
+          - if current_user.has_role?(:teacher) || current_user.has_role?(:admin)
+            %ul.navbar-nav.my-md-0.my-1
+              = link_to new_course_path, class: "nav-link #{'active fw-bold' if current_page?(new_course_path)}" do
+                .fas.fa-plus
+                New Course
+          - if current_user.has_role?(:admin)
             %ul.navbar-nav.my-md-0.my-1
               = link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do
                 .fas.fa-users
