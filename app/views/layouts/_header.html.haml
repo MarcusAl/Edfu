@@ -7,10 +7,11 @@
       %h2.fw-bold.d-md-inline-block.d-none
         edfu
       = image_tag 'temple.png', alt: "logo", class: 'logo_img'
-    %ul.navbar-nav.me-1.d-none.d-md-block
-      = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
-        .fas.fa-graduation-cap
-        Courses
+    - if current_user
+      %ul.navbar-nav.me-1.d-none.d-md-block
+        = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do
+          .fas.fa-graduation-cap
+          Courses
 
     -# Navbar Search Section 
     %ul.navbar-nav.d-none.d-md-block.w-md-50.rounded-heavy
@@ -54,9 +55,8 @@
                   .fa.fa-sign-out-alt
                   %b Sign out
     - else
-      %ul.navbar-nav
-        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'text-muted'
-      %ul.navbar-nav
+      %ul.navbar-nav.d-flex.justify-content-between
+        %li.nav-item.me-4= link_to 'Sign Up', new_user_registration_path, class: 'text-muted'
         %li.nav-item= link_to 'Log In', new_user_session_path, class: 'text-muted'
 
 -# Sub Navbar
