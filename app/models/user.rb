@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable, :confirmable
   rolify
-  has_many :courses
+
+  has_many :courses, dependent: :delete_all
   # When class is called its response is the email of the User
   def to_s
     email
