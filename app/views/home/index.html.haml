@@ -1,68 +1,69 @@
 
 .container-fluid
-  .p-5.text-dark.bg-light.hero_cont.w-100.mt-0
-    .overlay
+  .hero_cont.mt-0.d-none.d-md-block
 
-    %div.text-black.banner_title.visible.hero_message_cont.shadow.sm.rounded-0.font-normal
-      Education. For.
-      -# %span.strike
-      -#   them.
-      %span.cursive_font.ms-3 You.
-.container-fluid
-  - if current_user
-    .col-12.visible.d-md-none.mb-5.mb-md-0
-      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
-        .form-inline.d-flex.rounded-0
-          %button.btn.btn-lg.btn-cta2.visible.rounded-0.rounded-start{:type => "submit"}
-            %i.fas.fa-search{"aria-hidden" => "true"}
-          = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control form-control-sm rounded-0 rounded-end'
-  .p-2.justify-content-center.row
-    .col-6.w-100.p-3.d-inline-flex.mx-auto.justify-content-center.mb-3.figure-cont.pos-relative
+.mt-4
+  .p-2.justify-content-center.row.pos-relative
+    %div.text-black.hero_message_cont.shadow-sm.font-normal.ms-3.d-none.d-md-block
+      %h3.banner-title.fw-bold
+        Experts within reach
+      %span.small 
+        Courses starting at $13.99
+    .col-6.w-100.d-inline-flex.justify-content-center.mb-3.figure-cont.pos-relative
       .col-4.border-start.border-light.border-1.p-4.visible
-        .col-6.pos-relative.border-end.border-light.border-1.w-100.h-50
+        .col-6
+          .fw-bold.display-5.mb-3.cursive_font.font-normal
+            edfu
+          .lead
+            A community driven platform for education
+        .col-6.pos-relative.border-end.border-light.border-1.w-100.h-50.d-none.d-md-block
           .circle-1
           .circle-2
           .circle-3
           .circle-4
-        .col-6
-          .fw-bold.display-5.ms-3.cursive_font.font-normal
-            edfu
-          .lead
-            A community driven approach to education
-      = image_tag("vector1.png", class: "img-figure col-8 img-fluid border-end border-light border-4 visible")
-    .card-group.mt-4.row.mx-auto.col-6-md
-      = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-blue visible d-md-block main_card_cont" do
-        %h1
-          .fa.fa-graduation-cap.display-5
-        .fw-bold
-          = Course.count
-          online courses
-        .row
-        Explore a variety of fresh topics
-      = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-salmon visible d-none d-md-block mt-5 mt-md-0 ms-md-3" do
-        %h1
-          .fa.fa-chalkboard-teacher.display-5
-          /.fa.fa-brain
-        .fw-bold
-          = Course.distinct.count(:user_id)
-          expert music instructors
-        .row
-        Find the right instructor for you
-      = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-aqua visible d-none d-md-block mt-5 mt-md-0 ms-md-3" do
-        %h1
-          .fa.fa-user-graduate.display-5
-        .fw-bold
-          = User.count
-          active learners
-        .row
-        Join the community
-      = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-pink visible d-none d-md-block ms-md-3" do
-        %h1
-          .fa.fa-infinity.display-5
-        .fw-bold
-          Lifetime access
-        .row
-        Learn on your schedule
+      = image_tag("vector1.png", class: "img-figure col-8 img-fluid border-end me-5 border-light border-1 visible")
+  - if current_user
+    .container
+      .col-12.visible.d-md-none.mb-5.mb-md-0
+        = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+          .form-inline.d-flex.rounded-0
+            %button.btn.btn-lg.btn-cta2.visible.rounded-0.rounded-start{:type => "submit"}
+              %i.fas.fa-search{"aria-hidden" => "true"}
+            = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control form-control-sm rounded-0 rounded-end'
+    .container
+      .card-group.mt-2.row.mx-auto.col-6-md
+        = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-blue visible d-md-block main_card_cont" do
+          %h1
+            .fa.fa-graduation-cap.display-5
+          .fw-bold
+            = Course.count
+            online courses
+          .row
+          Explore a variety of fresh topics
+        = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-salmon visible d-none d-md-block mt-5 mt-md-0 ms-md-3" do
+          %h1
+            .fa.fa-chalkboard-teacher.display-5
+            /.fa.fa-brain
+          .fw-bold
+            = Course.distinct.count(:user_id)
+            expert music instructors
+          .row
+          Find the right instructor for you
+        = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-aqua visible d-none d-md-block mt-5 mt-md-0 ms-md-3" do
+          %h1
+            .fa.fa-user-graduate.display-5
+          .fw-bold
+            = User.count
+            active learners
+          .row
+          Join the community
+        = link_to courses_path, class: "card card-body text-black col-12 text-center p-3 bg-light heavy_round border-0 hover-card-pink visible d-none d-md-block ms-md-3" do
+          %h1
+            .fa.fa-infinity.display-5
+          .fw-bold
+            Lifetime access
+          .row
+          Learn on your schedule
 
 
   .container.mt-3.mb-5.border-min.p-3

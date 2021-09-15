@@ -38,20 +38,21 @@
 .tns-controls {
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   button {
     font-size: 25px;
     color: whitesmoke;
     font-weight: bold;
     padding: 5px 15px;
-    border-radius: 5px;
-    background: #7768ae;
-    border: solid black 2px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px #ccc;
+    background: #f36f3f;
+    border: solid #fff 2px;
     transition: 200ms ease-in;
   }
   button:hover {
-    background: rgba(236, 192, 207, 0.9);
+    background: rgba(73, 65, 114, 0.8);
   }
 }
 
