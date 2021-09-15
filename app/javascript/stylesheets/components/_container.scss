@@ -1,11 +1,13 @@
 .hero_cont {
-  background: url('~images/lady_teal.jpg');
+  background: url('~images/graduate_hats_in_air.jpg');
   position: relative;
   overflow: hidden;
-  background-position: 50% 65%;
+  // background-position: 50% 65%;
+  background-position: center center;
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-size: cover;
+  z-index: -10;
   // width: 60vw;
   height: 55vh;
   display: flex;
@@ -32,11 +34,43 @@
 .hero_message_cont {
   position: absolute;
   left: 1em;
-  padding: 1em;
-  bottom: 1em;
+  padding: 0.5em;
+  bottom: 0.3em;
   background: whitesmoke;
   border-radius: 5px;
   width: 8em;
+}
+
+.figure-cont {
+  border-radius: 5px;
+  padding: 2em;
+  // overflow: hidden;
+}
+
+.figure-cont:after {
+  content: '';
+  position: absolute;
+  width: 99%;
+  height: 40%;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  -ms-transform: skewY(-10deg); /* IE 9 */
+  transform: skewY(-10deg);
+  background: #f6bd60;
+}
+
+.figure-cont:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 40%;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  -ms-transform: skewY(-10deg); /* IE 9 */
+  transform: skewY(-10deg);
+  background: #f6bd60;
 }
 
 .banner_title,

@@ -1,4 +1,4 @@
-%nav.navbar.navbar-expand-md.navbar-light.bg-light.visible.border-bottom.border-1.w-100.justify-content-between.p-1
+%nav.navbar.visible.navbar-expand-md.navbar-light.bg-light.visible.border-bottom.border-1.w-100.justify-content-between.p-1
   .container-fluid.p-md-1.d-inline-flex.w-100.justify-content-between.mx-2
     - if current_user
       %button.navbar-toggler.bg-purple.text-white{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
@@ -61,7 +61,7 @@
         %li.nav-item= link_to 'Log In', new_user_session_path, class: 'text-muted'
 
 -# Sub Navbar
-.w-100.d-lg-block.d-none.shadow-lg.bg-light
+.w-100.d-lg-block.d-none.shadow-lg.bg-light.visible
   - if current_user
     %ul.nav.justify-content-center
       %li.nav-item.p-1
