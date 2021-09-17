@@ -22,8 +22,7 @@
   position: absolute;
   right: 1em;
   padding: 1em;
-  top: 0.3em;
-  background: rgba(255, 255, 255, 0.7);
+  bottom: 0.3em;
   backdrop-filter: blur(15px);
   border-radius: 5%;
   width: 12em;
@@ -82,7 +81,7 @@
 .cursive_font {
   font-family: 'Great Vibes', cursive;
   font-weight: 800;
-  font-size: 60px;
+  font-size: 70px;
   margin-top: 30px;
   position: relative;
   z-index: 1;
