@@ -2,7 +2,11 @@
   .card-header
     .card-title
       .fa.fa-user
-      = user.email
+      = link_to user.email, user_path(user)
+      - if (user.online?)
+        .badge.bg-success Online
+      - else
+        .badge.bg-warning Offline
   .list-group.list-group-flush
     .card-header
       Signed Up

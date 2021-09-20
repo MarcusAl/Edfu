@@ -4,7 +4,7 @@
       %button.navbar-toggler.bg-purple.text-white{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
         %span.fas.fa-bars
     = link_to root_path, class: "navbar-brand" do
-      %h2.fw-bold.d-md-inline-block.d-none
+      %h4.fw-bold.d-md-inline-block.d-none
         edfu
       = image_tag 'temple.png', alt: "logo", class: 'logo_img'
     - if current_user
@@ -17,7 +17,7 @@
     %ul.navbar-nav.d-none.d-md-block.w-md-50.rounded-heavy
       - if current_user
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
-          .form-inline.d-flex.rounded-heavy.bg-light.p-1.border.border-1.border-dark
+          .form-inline.d-flex.rounded-heavy.bg-light.border.border-1.border-dark
             %button.btn.btn-outline-dark.btn-cta.btn-sm.me-1{:type => "submit", class: 'form-control form-control-md border-0 rounded-end-0'}
               %i.fas.fa-search{"aria-hidden" => "true"}
             = f.search_field :title_cont, placeholder: 'Search for anything', class: 'form-control form-control-md border-0 rounded-heavy bg-transparent'
@@ -44,7 +44,18 @@
                 .fas.fa-bell
                 Activity
 
-          %li.nav-item.dropdown
+          .btn-group
+            .btn-group.dropstart{role: "group"}
+              %button.d-none.d-md-block.btn.btn-clear.dropdown-toggle.dropdown-toggle-split{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button", type: "button"}
+                -# %span.visually-hidden Toggle Dropstart
+              %ul.dropdown-menu
+                = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
+                  .fa.fa-sign-out-alt
+                  %b Sign out
+            %button.btn.d-none.d-md-block{type: "button"}
+              = link_to edit_user_registration_path do
+                .fa.fa-user.p-1
+          %li.nav-item.dropdown.visible-2.d-md-none
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
               .fa.fa-user
               -# %b= current_user.email

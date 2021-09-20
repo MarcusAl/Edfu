@@ -4,6 +4,10 @@
 @import 'card';
 @import 'bg';
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
   overflow-x: hidden;

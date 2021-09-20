@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   has_many :courses, dependent: :delete_all
   # When class is called its response is the email of the User
+
+  extend FriendlyId
+  friendly_id :email, use: :slugged
+
   def to_s
     email
   end
@@ -30,6 +34,10 @@ class User < ApplicationRecord
   end
 
   validate :must_have_a_role, on: :update
+
+  def online?
+    updated_at > 2.minutes.ago
+  end
 
   private
 
