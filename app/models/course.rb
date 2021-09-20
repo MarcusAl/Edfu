@@ -13,5 +13,5 @@ class Course < ApplicationRecord
   friendly_id :title, use: :slugged
 
   include PublicActivity::Model
-  tracked owner: proc { |controller| controller.current_user }
+  tracked owner: proc { |controller| controller&.current_user }
 end
