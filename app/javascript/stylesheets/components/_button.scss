@@ -48,12 +48,51 @@
     border-radius: 50%;
     box-shadow: 2px 2px 6px #ccc;
     background: #f36f3f;
-    border: solid #fff 2px;
+    border: none;
     transition: 200ms ease-in;
+    z-index: 1000;
   }
   button:hover {
     background: rgba(73, 65, 114, 0.8);
   }
+}
+
+// Accordion
+
+.accordion-collapse {
+  border: 0;
+}
+.accordion-button {
+  border: 0;
+  font-size: 18px;
+  color: #38316e;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-button::after {
+  width: auto;
+  height: auto;
+  content: '+';
+  font-size: 40px;
+  background-image: none;
+  text-align: center;
+  font-weight: 400;
+  color: #38316e;
+}
+.accordion-button:not(.collapsed)::after {
+  width: auto;
+  height: auto;
+  background-image: none;
+  content: '-';
+  text-align: center;
+  font-weight: 400;
+  font-size: 40px;
+  transform: rotate(180deg);
 }
 
 .tns-controls:focus {

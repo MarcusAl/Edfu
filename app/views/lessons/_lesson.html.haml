@@ -1,0 +1,20 @@
+.card.h-100.p-0.text-center
+  .card-header.justify-content-evenly.d-inline-flex
+    .card-title
+      = link_to lesson.title, lesson_path(lesson), class: 'card-link text-decoration-none text-black fw-bold'
+      - if policy(lesson).destroy?
+        = link_to '', lesson, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-times text-white btn-outline-danger ms-3 text-decoration-none btn btn-sm bg-purple border-0'
+  .card-body
+    = lesson.content
+  .card-footer
+    .badge.bg-purple.text-white
+      = lesson.course
+  .card-footer
+    .far.fa-clock
+    = lesson.created_at.strftime('%d-%b-%Y')
+    .row
+    .fa.fa-chalkboard-teacher
+    = lesson.course.user
+    .card-footer
+    - if policy(lesson).edit?
+      = link_to 'Edit', edit_lesson_path(lesson), class: 'btn btn-sm btn-outline-secondary'

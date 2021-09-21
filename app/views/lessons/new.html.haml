@@ -1,0 +1,8 @@
+.container.mt-3
+  .card
+    .card-header
+      %h1 New lesson
+    .card-body
+      = render 'form'
+
+  = link_to 'Back To Courses', courses_path, class: "btn btn-sm btn-outline-secondary mt-3"

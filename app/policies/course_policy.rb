@@ -6,13 +6,13 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def edit?
-    @user&.has_role?(:admin || @record.user = @user)
+    @user&.has_role?(:admin || @record.user == @user)
   end
 
   def update?
     # &. safeguards against nil returns
     # if @user is true and @user.has_role? is true
-    @user&.has_role?(:admin || @record.user = @user)
+    @user&.has_role?(:admin || @record.user == @user)
   end
 
   def new?
@@ -24,6 +24,6 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def destroy?
-    @user&.has_role?(:admin || @record.user = @user)
+    @user&.has_role?(:admin || @record.user == @user)
   end
 end

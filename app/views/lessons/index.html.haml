@@ -1,0 +1,28 @@
+.container.mt-3
+  %h1 Listing lessons
+  .table-responsive-md
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th{:scope => "col"} Title
+          %th{:scope => "col"} Content
+          %th{:scope => "col"} Course
+          %th{:scope => "col"} View
+          %th{:scope => "col"} Edit
+          %th{:scope => "col"} Delete
+      %tbody
+        - @lessons.each do |lesson|
+          %tr
+            %td= link_to lesson.title, lesson_path(lesson)
+            %td= lesson.content[0..18]
+            %td= lesson.course
+            %td= link_to 'Show', lesson, class: 'btn btn-warning bg-purple border-dark text-white'
+            %td= link_to 'Edit', edit_lesson_path(lesson), class: 'btn btn-warning bg-purple border-dark text-white'
+            %td= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger bg-purple border-dark text-white-50'
+
+  = link_to 'New Lesson', new_lesson_path, class: 'btn btn-warning'
+
+%br
+
+
+

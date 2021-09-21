@@ -2,9 +2,13 @@
   .card-header.justify-content-evenly.d-inline-flex
     .card-title
       = link_to course.title, course_path(course), class: 'card-link text-decoration-none text-black fw-bold'
-      = link_to '', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-times text-white btn-outline-danger ms-3 text-decoration-none btn btn-sm bg-purple' if policy(course).destroy?
+      = link_to '', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-times text-white btn-outline-danger ms-3 text-decoration-none btn btn-sm bg-purple border-0' if policy(course).destroy?
   .card-body
     = course.short_description
+  .card-footer
+    Lessons:
+    .badge.bg-purple
+      = course.lessons.count
   .card-footer
     .far.fa-clock
     = course.created_at.strftime('%d-%b-%Y')

@@ -1,0 +1,8 @@
+.container-fluid.mt-3
+  %h1.w-75.mx-auto.mb-4
+    = @lesson.title
+  .w-75.mx-auto
+    = render @lesson
+  .mt-3.w-75.mx-auto
+    = link_to 'Edit', edit_lesson_path(@lesson), class: 'btn bg-purple btn-outline-success border-0 text-white'
+    = link_to 'Back', course_path(@lesson.course), class: 'btn btn-warning'

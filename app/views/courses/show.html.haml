@@ -1,7 +1,27 @@
-.container.mt-3
-  = link_to 'Courses', courses_path, class: "text-decoration-none"
-  \/ 
-  = link_to @course.title, course_path(@course), class: 'card-link text-decoration-none text-black fw-bold'
-  %p
-.container.col-6
-  = render 'courses/course', course: @course 
+.container-fluid.mt-3
+  .row
+    .col-md-2.border-end.border-secondary
+      .sticky-md-top
+        %h4.d-inline-flex
+          Teacher:
+          %h4.badge.bg-dark.p-2.mt-3.ms-2
+            = link_to @course.user.username, user_path(@course.user), class: 'text-white'
+        %h2
+          = link_to @course.title, course_path(@course), class: 'card-link text-decoration-none text-black fw-bold'
+        %h4.badge.bg-purple.p-2.mt-3 
+          = @course.lessons.count
+          - if (@course.lessons.count > 1 || @course.lessons.count.zero?)       
+            courses
+          - else
+            course
+        %h4.badge.bg-purple.p-2.mt-3
+          $
+          = @course.price
+        = link_to 'Add Lesson', new_lesson_path(course_id: @course.id), class: 'btn-sm btn-warning p-2 mt-3'
+
+    .col-md-10.mt-3
+      .row
+        - @lessons.each do |lesson|
+          .col-md-4.mb-3.col-12
+            = render 'lessons/lesson', lesson: lesson
+%br
