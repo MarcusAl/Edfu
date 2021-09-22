@@ -25,7 +25,6 @@ class LessonsController < ApplicationController
   # POST /lessons or /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-    authorize(@lesson)
     @course = Course.friendly.find(params[:course_id])
     @lesson.course_id = @course.id
     respond_to do |format|
