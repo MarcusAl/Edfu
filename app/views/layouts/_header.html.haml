@@ -6,7 +6,7 @@
     = link_to root_path, class: "navbar-brand" do
       %h4.fw-bold.d-md-inline-block.d-none
         edfu
-      = image_tag 'temple.png', alt: "logo", class: 'logo_img'
+      = image_tag 'temple.png', alt: "logo", class: 'logo_img d-md-none'
     - if current_user
       %ul.navbar-nav.me-1.d-none.d-md-block
         = link_to courses_path, class: "nav-link #{'active fw-bold' if current_page?(courses_path)}" do

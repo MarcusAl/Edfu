@@ -1,7 +1,9 @@
-%h1 Editing lesson
+.container.mt-3
+  .card
+    .card-header
+      %h1 Edit lesson
+    .card-body
+      = render 'form'
 
-= render 'form'
-
-= link_to 'Show', @lesson
-\|
-= link_to 'Back', lessons_path
+  = link_to 'Show', course_lesson_path(@course, @lesson), class: "btn btn-sm btn-secondary mt-3"
+  = link_to 'Back', course_path(@lesson.course), class: "btn btn-sm btn-outline-secondary mt-3"

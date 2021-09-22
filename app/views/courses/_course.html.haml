@@ -14,7 +14,7 @@
     = course.created_at.strftime('%d-%b-%Y')
     .row
     .fa.fa-chalkboard-teacher
-    = course.user.username
+    = link_to course.user.username, user_path(course.user)
   .card-footer
     .badge.bg-secondary
       = course.language
