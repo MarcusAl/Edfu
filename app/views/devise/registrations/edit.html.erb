@@ -32,16 +32,15 @@
   </div>
 <% end %>
 
-  <div class="mx-auto w-75 mt-3">
+  <div class="mt-3 container p-0 w-75">
     <h3>Cancel my account</h3>
 
-    <p class="mt-3">Unhappy? 
-      <span class="border border-1 border-dark p-2">
+    <p class="mt-3 row mx-auto p-2">Unhappy? 
+      <span class="border border-1 border-dark p-2 mt-3">
         <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
       </span>
+    <a href="javascript:history.back()" class="btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3">Back</a>
     </p>
-      <%= link_to "Back", :back %>
-    </div>
   </div>
 
 

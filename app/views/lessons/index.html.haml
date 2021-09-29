@@ -13,7 +13,7 @@
       %tbody
         - @lessons.each do |lesson|
           %tr
-            %td= link_to lesson.title, lesson_path(lesson)
+            %td= link_to lesson.title, lesson_path
             %td= lesson.content[0..18]
             %td= lesson.course
             %td= link_to 'Show', lesson, class: 'btn btn-warning bg-purple border-dark text-white'

@@ -22,10 +22,12 @@
             = @course.created_at.strftime('%d-%b-%Y')
         - if @course.user_id == current_user.id
           = link_to 'Add lesson', new_course_lesson_path(@course, @lesson), class: 'btn btn-warning p-2 mt-3'
+          
 
     .col-md-10.mt-3
       .row
         - @lessons.each do |lesson|
           .col-md-4.mb-3.col-12
             = render 'lessons/lesson', lesson: lesson
+      = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
 %br

@@ -5,4 +5,4 @@
     .card-body
       = render 'form'
 
-  = link_to 'Back To Course', course_path(@course), class: "btn btn-sm btn-outline-secondary mt-3"
+  %a{href: "javascript:history.back()", class: "btn btn-sm btn-outline-secondary mt-3 bg-purple border-0 text-white"} Back
