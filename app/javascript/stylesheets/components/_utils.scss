@@ -27,6 +27,14 @@
   color: #38316e;
 }
 
+.text-purple {
+  color: #cec0fc;
+}
+
+.bg-purple-2 {
+  background: #cec0fc;
+}
+
 .bg-purple {
   background: rgba(73, 65, 114, 0.8);
 }
@@ -57,6 +65,11 @@
 
 .hover-purple:hover {
   color: #38316e;
+}
+
+.btn-hover-purple:hover {
+  background: #38316e !important;
+  color: #fff !important;
 }
 
 .font-normal {

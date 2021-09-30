@@ -1,20 +1,14 @@
-.card.h-100.p-0.text-center
-  .card-header.justify-content-evenly.d-inline-flex
+.card.h-100.p-0.border-secondary.rounded-0
+  .card-header.d-inline-flex.justify-content-between
     .card-title
       = link_to course.title, course_path(course), class: 'card-link text-decoration-none text-black fw-bold'
+    .card-title  
       = link_to '', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-times text-white btn-outline-danger ms-3 text-decoration-none btn btn-sm bg-purple border-0' if policy(course).destroy?
   .card-body
     = course.short_description
   .card-footer
-    Lessons:
-    .badge.bg-purple
+    .fa.fa-tasks
       = course.lessons.count
-  .card-footer
-    .far.fa-clock
-    = course.created_at.strftime('%d-%b-%Y')
-    .row
-    .fa.fa-chalkboard-teacher
-    = link_to course.user.username, user_path(course.user)
   .card-footer
     .badge.bg-secondary
       = course.language
@@ -22,6 +16,14 @@
       = course.level
     .badge.bg-secondary.ms-3
       = number_to_currency(course.price)
+  .card-footer.justify-content-between.d-inline-flex
+    .row.small
+      .far.fa-clock
+        Last updated: 
+        = course.created_at.strftime('%d-%b-%Y')
+    .row.small
+      .fa.fa-chalkboard-teacher.ms-3
+        = link_to course.user.username, user_path(course.user)
   - if policy(course).edit?
     .card-footer
       = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-outline-secondary'

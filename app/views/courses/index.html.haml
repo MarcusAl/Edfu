@@ -7,26 +7,31 @@
             Filter courses:
           = f.label :title
           = f.search_field :title_cont, placeholder: 'Title', class: 'form-control form-control-sm mb-2'
+          %hr.my-3
           = f.label :summary
           = f.search_field :short_description_cont, placeholder: 'Description', class: 'form-control form-control-sm mb-2'
+          %hr.my-3
           = f.label :language
           = f.search_field :language_cont, placeholder: 'Language', class: 'form-control form-control-sm mb-2'
           -# = f.select :language_cont, %w[English Chinese Russian Spanish French], include_blank: true,class: 'form-control form-control-sm mb-2'
+          %hr.my-3
           = f.label :difficulty
-          = f.search_field :level_cont, placeholder: 'Level', class: 'form-control form-control-sm mb-2'
+          = f.search_field :level_cont, placeholder: 'Beginner, Intermediate, Advanced', class: 'form-control form-control-sm mb-2'
+          %hr.my-3
           = f.label :price
           = f.search_field :price_eq, placeholder: 'Price', class: 'form-control form-control-sm mb-2'
+          %hr.my-3
           = f.label :teacher
           = f.search_field :user_email_cont, placeholder: 'Username', class: 'form-control form-control-sm mb-2'
           = link_to "Refresh", courses_path, class: "me-2 btn btn-outline-secondary mt-2 form-control-sm"
-          = f.submit :class => "form-control-sm mt-2 btn-warning btn w-50"
+          = f.submit :class => "form-control-sm mt-2 border-0 bg-purple-2 text-black btn-hover-purple btn w-50"
         %h4.badge.bg-purple.p-2.mt-3         
           = @courses.count
           results
     .col-md-10
       .row
         - @courses.each do |course|
-          .col-md-4.mb-3.col-12
+          .col-md-6.mb-3.col-12
             = render 'courses/course', course: course
 %br
 

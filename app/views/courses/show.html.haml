@@ -1,33 +1,81 @@
-.container-fluid.mt-3
-  .row
-    .col-md-2.border-end.border-secondary
-      .sticky-md-top
-        %h4.d-inline-flex
-          Teacher:
-          %h4.badge.bg-dark.p-2.mt-3.ms-2
-            = link_to @course.user.username, user_path(@course.user), class: 'text-white'
-        %h2
-          = link_to @course.title, course_path(@course), class: 'card-link text-decoration-none text-black fw-bold'
-        .col-12
-          %h4.badge.bg-purple.p-2.mt-3 
-            = @course.lessons.count
-            - if (@course.lessons.count > 1 || @course.lessons.count.zero?)       
-              courses
-            - else
-              course
-          %h4.badge.bg-purple.p-2.mt-3
-            $
-            = @course.price
-          %h4.badge.bg-purple.p-2.mt-3
-            = @course.created_at.strftime('%d-%b-%Y')
-        - if @course.user_id == current_user.id
-          = link_to 'Add lesson', new_course_lesson_path(@course, @lesson), class: 'btn btn-warning p-2 mt-3'
+-# .container-fluid.mt-3
+-#   .row
+-#     .col-md-2.border-end.border-secondary
+-#       .sticky-md-top
+-#         %h4.d-inline-flex
+-#           Teacher:
+-#           %h4.badge.bg-dark.p-2.mt-3.ms-2
+-#             = link_to @course.user.username, user_path(@course.user), class: 'text-white'
+-#         %h2
+-#           = link_to @course.title, course_path(@course), class: 'card-link text-decoration-none text-black fw-bold'
+-#         .col-12
+-#           %h4.badge.bg-purple.p-2.mt-3 
+-#             = @course.lessons.count
+-#             - if (@course.lessons.count > 1 || @course.lessons.count.zero?)       
+-#               courses
+-#             - else
+-#               course
+-#           %h4.badge.bg-purple.p-2.mt-3
+-#             $
+-#             = @course.price
+-#           %h4.badge.bg-purple.p-2.mt-3
+-#             = @course.created_at.strftime('%d-%b-%Y')
+-#         - if @course.user_id == current_user.id
+-#           = link_to 'Add lesson', new_course_lesson_path(@course, @lesson), class: 'btn btn-warning p-2 mt-3'
           
 
-    .col-md-10.mt-3
-      .row
-        - @lessons.each do |lesson|
-          .col-md-4.mb-3.col-12
-            = render 'lessons/lesson', lesson: lesson
-      = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
-%br
+-#     .col-md-10.mt-3
+-#       .row
+-#         - @lessons.each do |lesson|
+-#           .col-md-4.mb-3.col-12
+-#             = render 'lessons/lesson', lesson: lesson
+-#       = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
+-# %br
+
+.h-100.p-0.text-white.bg-dark.rounded-3.justify-content-center.p-md-5
+  .row.position-relative
+    .col-12
+      .container.p-md-5.p-4
+        %h1
+          = link_to @course.title, course_path(@course), class: 'text-decoration-none text-white'
+        %p.text-white
+          = @course.short_description
+        %h5.small
+          Created by 
+          = link_to @course.user.username, user_path(@course.user), class: 'text-decoration-none text-purple'
+        .d-inline-flex.small
+          .row
+            .col.col-12.col-md-4.mt-2
+              .far.fa-clock
+              Last updated:
+              = @course.created_at.strftime('%d-%b-%Y')
+            .col.col-12.col-md-4.mt-2
+              .fa.fa-globe
+                = @course.language
+            .col.col-12.col-md-4.mt-2
+              .fa.fa-user
+                = @course.level
+        .col-12
+          = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
+    .border-light.border-3.p-5.d-none.d-md-block.position-absolute.top-0.end-0{style: "width: 25rem;"}
+      %a{href: "/"}
+        .card.sticky-md-top.m-0.text-center
+          %img.card-img-top.img-fluid{alt: "Course image", src: "https://via.placeholder.com/150", style: "height: 10rem;"}/
+          .card-body.mt-3
+            %h5.card-title.fw-bold.lead Card title
+            %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            %a.btn.btn-dark.border-0.btn-hover-purple.text-white.rounded-0.w-100.mt-3{href: "#"} Go to course
+.container.mt-2.mb-5.border-min.p-5
+  %h4.text-black.mt-5.mb-5
+    Course Content
+  #accordionFlushExample.accordion.shadow-sm
+    .accordion-item
+      %h2#flush-headingOne.accordion-header
+        %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
+          View
+      #collapseOne.accordion-collapse.collapse{"aria-labelledby" => "flush-headingOne", "data-bs-parent" => "#accordionFlush"}
+        .accordion-body
+          .row
+            - @lessons.each do |lesson|
+              .col-md-4.mb-3.col-12
+                = render 'lessons/lesson', lesson: lesson

@@ -1,5 +1,5 @@
-.card.h-100.p-0.text-center
-  .card-header.justify-content-evenly.d-inline-flex
+.card.h-100.p-0.border.border-dark.rounded-0
+  .card-header
     .card-title
       = link_to lesson.title, course_lesson_path(@course, lesson), class: 'card-link text-decoration-none text-black fw-bold'
       - if policy(lesson).destroy?
@@ -12,5 +12,5 @@
     .fa.fa-chalkboard-teacher.mb-3
     = lesson.course.user.username
     - if policy(lesson).edit?
-      .card-footer
-        = link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-sm btn-outline-secondary'
+      %div
+      = link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-sm btn-outline-secondary'
