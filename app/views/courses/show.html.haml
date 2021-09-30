@@ -55,8 +55,6 @@
             .col.col-12.col-md-4.mt-2
               .fa.fa-user
                 = @course.level
-        .col-12
-          = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
     .border-light.border-3.p-5.d-none.d-md-block.position-absolute.top-0.end-0{style: "width: 25rem;"}
       %a{href: "/"}
         .card.sticky-md-top.m-0.rounded-0.border-white.border-1.shadow-sm
@@ -79,14 +77,17 @@
 .container.mt-2.mb-5.border-min.p-5
   %h4.text-black.mt-5.mb-5
     Course Content
-  #accordionFlushExample.accordion.shadow-sm
-    .accordion-item
-      %h2#flush-headingOne.accordion-header
-        %button.accordion-button.collapsed.bg-light.text-black{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
-          View
-      #collapseOne.accordion-collapse.collapse{"aria-labelledby" => "flush-headingOne", "data-bs-parent" => "#accordionFlush"}
-        .accordion-body
-          .row
-            - @lessons.each do |lesson|
-              .col-md-4.mb-3.col-12
-                = render 'lessons/lesson', lesson: lesson
+  .col-12
+    %h5.text-black.lead 
+      = @course.lessons.count
+      - if (@course.lessons.count > 1 || @course.lessons.count.zero?)       
+        courses
+      - else
+        course
+  .col-md-10.mt-3
+    .row
+      - @lessons.each do |lesson|
+        .col-md-4.mb-3.col-12
+          = render 'lessons/lesson', lesson: lesson
+    = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
+%br
