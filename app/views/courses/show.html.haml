@@ -33,61 +33,65 @@
 -# %br
 
 .h-100.p-0.text-white.bg-dark.justify-content-center.p-md-5
-  .row.position-relative
-    .col-12
-      .container.p-md-5.p-4
-        %h1
-          = link_to @course.title, course_path(@course), class: 'text-decoration-none text-white'
-        %p.text-white
-          = @course.short_description
-        %h5.small
-          Created by 
-          = link_to @course.user.username, user_path(@course.user), class: 'text-decoration-none text-purple'
-        .d-inline-flex.small
-          .row
-            .col.col-12.col-md-4.mt-2
-              .far.fa-clock
-              Last updated:
-              = @course.created_at.strftime('%d-%b-%Y')
-            .col.col-12.col-md-4.mt-2
-              .fa.fa-globe
-                = @course.language
-            .col.col-12.col-md-4.mt-2
-              .fa.fa-user
-                = @course.level
-    .border-light.border-3.p-5.d-none.d-md-block.position-absolute.top-0.end-0{style: "width: 25rem;"}
-      %a{href: "/"}
-        .card.sticky-md-top.m-0.rounded-0.border-white.border-1.shadow-sm
-          %img.card-img-top.img-fluid{alt: "Course image", src: "https://via.placeholder.com/150", style: "height: 10rem;"}/
-          .card-body.mt-3
-            %h5.card-title.small.fw-bold This course includes:
-            %p.card-text
-              .row
-                .col.col-12.d-inline-flex.mb-2
-                  .fas.fa-play-circle.card-icons
-                  .fw-normal.small.ms-2
-                    = @course.lessons.count
-                    lessons
-                .col.col-12.d-inline-flex
-                  .fas.fa-mobile-alt.card-icons
-                  .fw-normal.small.ms-2
-                    Access on mobile and tv
-            = link_to 'Go to course', course_lesson_path(@course, @course.lessons.first), class: "btn text-center btn-dark p-3 border-0 btn-hover-purple text-white rounded-0 w-100 mt-3"
-          .card-body.border-top.border-light.border-2
-.container.mt-2.mb-5.border-min.p-5
-  %h4.text-black.mt-5.mb-5
-    Course Content
-  .col-12
-    %h5.text-black.lead 
-      = @course.lessons.count
-      - if (@course.lessons.count > 1 || @course.lessons.count.zero?)       
-        courses
-      - else
-        course
-  .col-md-10.mt-3
+  .mx-5
+    .row.position-relative
+      .col-12.p-5
+        %div
+          %h1
+            = link_to @course.title, course_path(@course), class: 'text-decoration-none text-white'
+          %p.text-white
+            = @course.short_description
+          %h5.small
+            Created by 
+            = link_to @course.user.username, user_path(@course.user), class: 'text-decoration-none text-purple'
+          .d-inline-flex.small
+            .row
+              .col.col-12.col-md-4.mt-2
+                .far.fa-clock
+                Last updated:
+                = @course.created_at.strftime('%d-%b-%Y')
+              .col.col-12.col-md-4.mt-2
+                .fa.fa-globe
+                  = @course.language
+              .col.col-12.col-md-4.mt-2
+                .fa.fa-user
+                  = @course.level
+      .border-light.border-3.p-5.d-none.d-lg-block.position-absolute.top-0.end-0{style: "width: 25rem;"}
+        %a{href: "/"}
+          .card.sticky-md-top.m-0.rounded-0.border-white.border-1.shadow-sm
+            %img.card-img-top.img-fluid{alt: "Course image", src: "https://via.placeholder.com/150", style: "height: 10rem;"}/
+            .card-body.mt-3.p-4
+              %h5.card-title.small.fw-bold This course includes:
+              %p.card-text
+                .row
+                  .col.col-12.d-inline-flex.mb-2
+                    .fas.fa-play-circle.card-icons
+                    .fw-normal.small.ms-2
+                      = @course.lessons.count
+                      lessons
+                  .col.col-12.d-inline-flex
+                    .fas.fa-mobile-alt.card-icons
+                    .fw-normal.small.ms-2
+                      Access on mobile and tv
+              = link_to 'Go to course', course_lesson_path(@course, @course.lessons.first), class: "btn text-center btn-dark p-3 border-0 btn-hover-purple text-white rounded-0 w-100 mt-3"
+            .card-body.border-top.border-light.border-2
+.container.mt-2.mb-5.border-min.p-0.justify-content-center.p-md-5.mx-0
+  .mx-5
     .row
-      - @lessons.each do |lesson|
-        .col-md-4.mb-3.col-12
-          = render 'lessons/lesson', lesson: lesson
-    = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
+      .col-12.p-5
+        %h4.text-black.mt-5.mb-5
+          Course Content
+        .col-12
+          %h5.text-black.lead 
+            = @course.lessons.count
+            - if (@course.lessons.count > 1 || @course.lessons.count.zero?)       
+              courses
+            - else
+              course
+        .col-12.mt-3.w-100
+          .row
+            - @lessons.each do |lesson|
+              .col-md-6.mb-3.col-12
+                = render 'lessons/lesson', lesson: lesson
+          = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
 %br
