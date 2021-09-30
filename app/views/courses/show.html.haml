@@ -32,7 +32,7 @@
 -#       = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
 -# %br
 
-.h-100.p-0.text-white.bg-dark.rounded-3.justify-content-center.p-md-5
+.h-100.p-0.text-white.bg-dark.justify-content-center.p-md-5
   .row.position-relative
     .col-12
       .container.p-md-5.p-4
@@ -59,12 +59,23 @@
           = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
     .border-light.border-3.p-5.d-none.d-md-block.position-absolute.top-0.end-0{style: "width: 25rem;"}
       %a{href: "/"}
-        .card.sticky-md-top.m-0.text-center
+        .card.sticky-md-top.m-0.rounded-0.border-white.border-1.shadow-sm
           %img.card-img-top.img-fluid{alt: "Course image", src: "https://via.placeholder.com/150", style: "height: 10rem;"}/
           .card-body.mt-3
-            %h5.card-title.fw-bold.lead Card title
-            %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-            %a.btn.btn-dark.border-0.btn-hover-purple.text-white.rounded-0.w-100.mt-3{href: "#"} Go to course
+            %h5.card-title.small.fw-bold This course includes:
+            %p.card-text
+              .row
+                .col.col-12.d-inline-flex.mb-2
+                  .fas.fa-play-circle.card-icons
+                  .fw-normal.small.ms-2
+                    = @course.lessons.count
+                    lessons
+                .col.col-12.d-inline-flex
+                  .fas.fa-mobile-alt.card-icons
+                  .fw-normal.small.ms-2
+                    Access on mobile and tv
+            = link_to 'Go to course', course_lesson_path(@course, @course.lessons.first), class: "btn text-center btn-dark p-3 border-0 btn-hover-purple text-white rounded-0 w-100 mt-3"
+          .card-body.border-top.border-light.border-2
 .container.mt-2.mb-5.border-min.p-5
   %h4.text-black.mt-5.mb-5
     Course Content
