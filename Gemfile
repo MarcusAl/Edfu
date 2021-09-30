@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
+gem 'exception_notification'
 gem 'faker'
 gem 'friendly_id', '~> 5.4.0'
 gem 'haml-rails', '~> 2.0'
