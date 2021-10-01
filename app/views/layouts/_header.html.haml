@@ -39,6 +39,10 @@
               = link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do
                 .fas.fa-users
                 Users
+          %ul.navbar-nav.my-md-0.my-1
+            = link_to enrollments_path, class: "nav-link #{'active fw-bold' if current_page?(enrollments_path)}" do
+              .fas.fa-lock-open
+              Enrollments
             %ul.navbar-nav.my-md-0.my-1
               = link_to home_activity_path, class: "nav-link #{'active fw-bold' if current_page?(home_activity_path)}" do
                 .fas.fa-bell

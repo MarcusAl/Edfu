@@ -6,6 +6,7 @@ class User < ApplicationRecord
   rolify
 
   has_many :courses, dependent: :delete_all
+  has_many :enrollments
   # When class is called its response is the email of the User
 
   extend FriendlyId

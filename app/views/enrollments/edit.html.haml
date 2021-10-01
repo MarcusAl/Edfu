@@ -1,0 +1,14 @@
+- content_for :title do
+  Editing
+  \|
+  = @enrollment
+
+.container.mt-3
+  .card
+    .card-header
+      %h1 Edit enrollment
+    .card-body
+      = render 'form'
+
+  = link_to 'Show', @enrollment, class: "btn btn-sm btn-secondary mt-3"
+  = link_to 'Back', enrollments_path, class: "btn btn-sm btn-outline-secondary mt-3"

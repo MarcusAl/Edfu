@@ -1,0 +1,38 @@
+- content_for :title do
+  All Enrollments
+
+
+.container.mt-3
+  %h2 
+    Listing enrollments
+    .badge.bg-purple
+      = @enrollments.count
+  .table-responsive-md
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th Id
+          %th User
+          %th Course
+          %th Rating
+          %th Review
+          %th Price
+          %th View
+          %th Edit
+          %th Delete
+      %tbody
+        - @enrollments.each do |enrollment|
+          %tr
+            %th{:scope => "row"}= enrollment.id
+            %td= link_to enrollment.user, enrollment_path(enrollment)
+            %td= enrollment.course
+            %td= enrollment.rating
+            %td= enrollment.review
+            %td= number_to_currency(enrollment.price)
+            %td= link_to 'Show', enrollment, class: 'btn btn-sm border-0 bg-purple-2 text-black btn-hover-purple'
+            %td= link_to 'Edit', edit_enrollment_path(enrollment), class: 'btn btn-sm border-0 bg-purple-2 text-black btn-hover-purple'
+            %td= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-dark text-white'
+
+  = link_to 'New Enrollment', new_enrollment_path, class: 'btn border-0 bg-purple text-white btn-outline-secondary mt-5'
+
+%br
