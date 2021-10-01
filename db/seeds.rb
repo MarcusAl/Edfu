@@ -3,16 +3,17 @@
 
 # User.create({ email: 'emkay1993@gmail.com', password: 'pass1234', password_confirmation: 'pass1234' })
 
+# user = User.new(
+#   email: 'admin@example.com',
+#   password: 'pass1234',
+#   password_confirmation: 'pass1234'
+# )
+
+# user.skip_confirmation!
+# user.save!
 lang_array = %w[English Chinese Russian Spanish French]
 
-user = User.new(
-  email: 'admin@example.com',
-  password: 'pass1234',
-  password_confirmation: 'pass1234'
-)
-
-user.skip_confirmation!
-user.save!
+PublicActivity.enabled = false
 
 30.times do
   Course.create([{
@@ -25,3 +26,5 @@ user.save!
                   price: Faker::Number.between(from: 15, to: 200)
                 }])
 end
+
+PublicActivity.enabled = true

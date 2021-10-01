@@ -130,6 +130,7 @@ GEM
     nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (4.11.0)
     pg (1.2.3)
     public_activity (1.6.4)
       actionpack (>= 3.0.0)
@@ -263,6 +264,7 @@ DEPENDENCIES
   haml-rails (~> 2.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pagy
   pg (>= 0.18, < 2.0)
   public_activity
   puma (~> 4.1)

@@ -11,7 +11,10 @@ class CoursesController < ApplicationController
       # @courses = @q.result.includes(:user)
 
       @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
-      @courses = @ransack_courses.result.includes(:user)
+      # @courses = @ransack_courses.result.includes(:user)
+
+      @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
+      @pagy.vars[:size] = [3, 2, 2, 3]
     end
   end
 

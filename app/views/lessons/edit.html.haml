@@ -1,3 +1,10 @@
+- content_for :title do
+  Lessons
+  \|
+  = @lesson.course.title
+  \|
+  = @lesson.title
+
 .container.mt-3
   .card
     .card-header

@@ -32,6 +32,11 @@
 -#       = link_to 'Back to courses', courses_path, class: 'btn btn-sm bg-purple btn-outline-secondary border-0 text-white mt-3'
 -# %br
 
+- content_for :title do
+  Courses
+  \|
+  = @course.title
+
 .h-100.p-0.text-white.bg-dark.justify-content-center.p-md-5
   .mx-5
     .row.position-relative
