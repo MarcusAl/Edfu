@@ -28,14 +28,16 @@
           = f.search_field :user_email_cont, placeholder: 'Username', class: 'form-control form-control-sm mb-2'
           = link_to "Refresh", courses_path, class: "me-2 btn btn-outline-secondary mt-2 form-control-sm"
           = f.submit :class => "form-control-sm mt-2 border-0 bg-purple-2 text-black btn-hover-purple btn w-50"
-    .col-md-10
+    .col-md-10.mt-3
       .row
         - @courses.each do |course|
           .col-md-6.mb-3.col-12
             = render 'courses/course', course: course
       -# != pagy_nav(@pagy)
-      != pagy_bootstrap_nav(@pagy)
-      .w-50
-        != pagy_info(@pagy, item_name: 'Course'.pluralize(@pagy.count))
+      .table-responsive
+        .small
+          != pagy_bootstrap_nav(@pagy)
+        .w-50
+          != pagy_info(@pagy, item_name: 'Course'.pluralize(@pagy.count))
 %br
 
